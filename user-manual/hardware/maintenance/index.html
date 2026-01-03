@@ -1,0 +1,3218 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Riverlabs suite of environmental sensors">
+      
+      
+        <meta name="author" content="Riverlabs Ltd">
+      
+      
+        <link rel="canonical" href="https://ichydro.github.io/Riverlabs/user-manual/hardware/maintenance/">
+      
+      
+        <link rel="prev" href="../internal-components/">
+      
+      
+        <link rel="next" href="../../../SDcard/">
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/es/" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../images/riverlabs_logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Maintenance - Riverlabs Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#maintenance-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Riverlabs Documentation" class="md-header__button md-logo" aria-label="Riverlabs Documentation" data-md-component="logo">
+      
+  <img src="../../../images/riverlabs_white_mono.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Riverlabs Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Maintenance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ICHydro/Riverlabs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ICHydro/Riverlabs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../quick-start/quick-start/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  User Manual
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../arduino/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Developer Manual
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Riverlabs Documentation" class="md-nav__button md-logo" aria-label="Riverlabs Documentation" data-md-component="logo">
+      
+  <img src="../../../images/riverlabs_white_mono.svg" alt="logo">
+
+    </a>
+    Riverlabs Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ICHydro/Riverlabs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ICHydro/Riverlabs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quick Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/arduino-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/logger-identification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logger Identification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/first-deployment-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/mounting-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/sensor-positioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor Positioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/environmental-considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environmental Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../techspec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../battery-power-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery & Power Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internal-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internal Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-schedule-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Schedule Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance Schedule Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexible Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-monitoring-quarterly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Monitoring (Quarterly)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Monitoring (Quarterly)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-telemetry-is-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If Telemetry is Available
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Without Telemetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monthly-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Inspection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monthly Inspection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-required-15-30-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required: 15-30 minutes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-external-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual External Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-functional-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Functional Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Download
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yearly-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yearly Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yearly Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-required-30-60-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required: 30-60 minutes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-maintenance-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Maintenance Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annual-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annual Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annual Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-required-1-2-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required: 1-2 hours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-annual-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Annual Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleaning-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaning Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cleaning Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensor Cleaning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor Cleaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultrasound-wari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ultrasound (Wari)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lidar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lidar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enclosure-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enclosure Cleaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery-contact-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery Contact Cleaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sd-card-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SD Card Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-during-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting During Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting During Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-found-during-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues Found During Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SDcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Card Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telemetry/setup-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telemetry/thingsboard-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThingsBoard Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telemetry/xbee-setup-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XBee Setup Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telemetry/troubleshooting-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/diagnostic-flowcharts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostic Flowcharts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../arduino/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploading Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Details
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thingsboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThingsBoard Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xbee3G/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XBee 3G Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-schedule-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Schedule Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance Schedule Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexible Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-monitoring-quarterly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Monitoring (Quarterly)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Monitoring (Quarterly)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-telemetry-is-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If Telemetry is Available
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Without Telemetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monthly-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Inspection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monthly Inspection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-required-15-30-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required: 15-30 minutes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-external-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual External Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-functional-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Functional Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Download
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yearly-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yearly Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yearly Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-required-30-60-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required: 30-60 minutes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-maintenance-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Maintenance Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annual-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annual Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annual Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-required-1-2-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required: 1-2 hours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-annual-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Annual Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleaning-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaning Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cleaning Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensor Cleaning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor Cleaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultrasound-wari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ultrasound (Wari)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lidar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lidar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enclosure-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enclosure Cleaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery-contact-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery Contact Cleaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sd-card-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SD Card Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-during-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting During Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting During Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-found-during-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues Found During Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/ICHydro/Riverlabs/edit/main/docs/user-manual/hardware/maintenance.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ICHydro/Riverlabs/raw/main/docs/user-manual/hardware/maintenance.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="maintenance-guide">Maintenance Guide<a class="headerlink" href="#maintenance-guide" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>Regular maintenance ensures reliable, long-term operation of your Riverlabs logger. This guide covers routine checks, cleaning procedures, and preventive maintenance schedules.</p>
+</div>
+<h2 id="maintenance-philosophy">Maintenance Philosophy<a class="headerlink" href="#maintenance-philosophy" title="Permanent link">&para;</a></h2>
+<p><strong>Preventive maintenance is cheaper than reactive repair.</strong></p>
+<p>Regular, systematic checks catch problems before they cause data loss or equipment failure. A 10-minute maintenance visit every 3-6 months prevents days of troubleshooting and potential data gaps.</p>
+<hr />
+<h2 id="maintenance-schedule-overview">Maintenance Schedule Overview<a class="headerlink" href="#maintenance-schedule-overview" title="Permanent link">&para;</a></h2>
+<h3 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Frequency</th>
+<th>Duration</th>
+<th>Tasks</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monthly</strong></td>
+<td>1 min</td>
+<td>Data Review - check data and battery levels, data download as appropriate</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Quarterly</strong></td>
+<td>5 min</td>
+<td>Basic visual inspection &amp; external cleaning</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Annually</strong></td>
+<td>15 hours</td>
+<td>External cleaning, Silica Replacement and battery change recommended</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flexible-scheduling">Flexible Scheduling<a class="headerlink" href="#flexible-scheduling" title="Permanent link">&para;</a></h3>
+<p>Adjust frequency based on:
+- <strong>Deployment criticality</strong> (research vs. operational)
+- <strong>Environmental harshness</strong> (urban vs. extreme conditions)
+- <strong>Accessibility</strong> (easy vs. difficult site visits)
+- <strong>Telemetry availability</strong> (remote vs. manual data retrieval)
+- <strong>Logger age</strong> (new vs. established deployment)</p>
+<hr />
+<h2 id="remote-monitoring-quarterly">Remote Monitoring (Quarterly)<a class="headerlink" href="#remote-monitoring-quarterly" title="Permanent link">&para;</a></h2>
+<h3 id="if-telemetry-is-available">If Telemetry is Available<a class="headerlink" href="#if-telemetry-is-available" title="Permanent link">&para;</a></h3>
+<p><strong>Time Required:</strong> 1 minutes</p>
+<p><strong>Tasks:</strong></p>
+<ol>
+<li><strong>Check Latest Data Transmission</strong></li>
+<li>[ ] Data received in last 24-48 hours</li>
+<li>[ ] No gaps in data stream</li>
+<li>
+<p>[ ] Timestamps continuous and correct</p>
+</li>
+<li>
+<p><strong>Review Battery Voltage</strong></p>
+</li>
+<li>[ ] Voltage trend is stable/expected</li>
+<li>[ ] No sudden drops</li>
+<li>
+<p>[ ] Above 3.5V (plan visit if approaching this level of depletion)</p>
+</li>
+<li>
+<p><strong>Inspect Sensor Readings</strong></p>
+</li>
+<li>[ ] Values within expected range</li>
+<li>[ ] No stuck readings (same value repeatedly)</li>
+<li>
+<p>[ ] Variance appropriate for conditions</p>
+</li>
+<li>
+<p>**Check Telemetry Health (if applicable) **</p>
+</li>
+<li>[ ] Signal strength adequate</li>
+<li>[ ] Connection successful</li>
+<li>[ ] No excessive retries</li>
+</ol>
+<p><strong>Red Flags Requiring Site Visit:</strong>
+- ⚠️ No data for &gt;48 hours - likely power loss or logger displacement.
+- ⚠️ Battery voltage &lt;3.4V - Power drain
+- ⚠️ Sensor readings stuck or erratic
+- ⚠️ Telemetry signal lost</p>
+<h3 id="without-telemetry">Without Telemetry<a class="headerlink" href="#without-telemetry" title="Permanent link">&para;</a></h3>
+<p>If no telemetry, increase frequency of physical site visits (monthly instead of quarterly).</p>
+<hr />
+<h2 id="monthly-inspection">Monthly Inspection<a class="headerlink" href="#monthly-inspection" title="Permanent link">&para;</a></h2>
+<h3 id="time-required-15-30-minutes">Time Required: 15-30 minutes<a class="headerlink" href="#time-required-15-30-minutes" title="Permanent link">&para;</a></h3>
+<h3 id="visual-external-inspection">Visual External Inspection<a class="headerlink" href="#visual-external-inspection" title="Permanent link">&para;</a></h3>
+<p><strong>Enclosure:</strong>
+- [ ] No visible damage or cracks
+- [ ] Seals intact
+- [ ] No water inside enclosure (look for condensation and check colour or silica inside).
+- [ ] Mounting secure, no loosening
+- [ ] No evidence of tampering or vandalism</p>
+<ul>
+<li>Check no pooling of water on seals.</li>
+<li>Ensure no hairs or strand materials acorss the seals.</li>
+</ul>
+<p><strong>Environmental:</strong>
+- Vegetation clearance maintained
+- No new obstructions in sensor path
+- Drainage working (no water pooling)
+- No animal/insect nests visible </p>
+<p><strong>Sensor:</strong>
+- Sensor face clean
+- No cobwebs or debris
+- No physical damage
+- Cable secure and undamaged</p>
+<h3 id="quick-functional-check">Quick Functional Check<a class="headerlink" href="#quick-functional-check" title="Permanent link">&para;</a></h3>
+<p><strong>If accessible without opening:</strong>
+- LED activity visible (when RST button is pressed)
+- No error LED patterns (See LED Patterns)</p>
+<h3 id="data-download">Data Download<a class="headerlink" href="#data-download" title="Permanent link">&para;</a></h3>
+<p>If accessible and time permits:
+- [ ] Download SD card data
+- [ ] Verify recent measurements
+- [ ] Check file integrity
+- [ ] Compare with remote data (if telemetry)</p>
+<hr />
+<h2 id="yearly-maintenance">Yearly Maintenance<a class="headerlink" href="#yearly-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="time-required-30-60-minutes">Time Required: 30-60 minutes<a class="headerlink" href="#time-required-30-60-minutes" title="Permanent link">&para;</a></h3>
+<h3 id="pre-maintenance-checklist">Pre-Maintenance Checklist<a class="headerlink" href="#pre-maintenance-checklist" title="Permanent link">&para;</a></h3>
+<p><strong>Bring:</strong>
+- [ ] Cleaning supplies (see Cleaning section)
+- [ ] Spare batteries if required (charged)
+- [ ] Cross head screwdriver basic tools
+- [ ] Multimeter
+- [ ] FTDI cable and laptop (encase clock/code updates needed - ensure arduino and required libraries are installed)</p>
+<h3 id="detailed-inspection">Detailed Inspection<a class="headerlink" href="#detailed-inspection" title="Permanent link">&para;</a></h3>
+<p><strong>1. External Condition (10 min)</strong></p>
+<ul>
+<li>[ ] <strong>Enclosure integrity</strong></li>
+<li>No cracks, scratches, or damage</li>
+<li>All screws/fasteners present and tight</li>
+<li>Gaskets/seals in good condition</li>
+<li>Cable glands tight and sealed</li>
+<li>
+<p>No water marks inside</p>
+</li>
+<li>
+<p>[ ] <strong>Mounting security</strong></p>
+</li>
+<li>Mounting hardware tight</li>
+<li>No corrosion on brackets/ties</li>
+<li>Zip ties not brittle (replace if degraded)</li>
+<li>No movement or wobble</li>
+<li>
+<p>Alignment still correct</p>
+</li>
+<li>
+<p>[ ] <strong>Environmental factors</strong></p>
+</li>
+<li>Vegetation trimmed (clear zones maintained)</li>
+<li>No new nearby obstructions</li>
+<li>Sun shield intact (if present)</li>
+<li>Bird deterrents working</li>
+<li>No animal activity</li>
+</ul>
+<p><strong>2. Internal Inspection (10 min)</strong></p>
+<p>Open enclosure and inspect:</p>
+<ul>
+<li>[ ] <strong>No moisture inside</strong></li>
+<li>Desiccant dry (replace if saturated)</li>
+<li>No condensation on PCB</li>
+<li>
+<p>No corrosion on components</p>
+</li>
+<li>
+<p>[ ] <strong>Battery condition</strong></p>
+</li>
+<li>Battery voltage: <strong><em>_</em></strong> V</li>
+<li>No swelling or damage</li>
+<li>Contacts clean and shiny</li>
+<li>
+<p>Good mechanical connection</p>
+</li>
+<li>
+<p>[ ] <strong>SD card</strong></p>
+</li>
+<li>Seated properly</li>
+<li>No physical damage</li>
+<li>
+<p>Recent data present</p>
+</li>
+<li>
+<p>[ ] <strong>Connections</strong></p>
+</li>
+<li>Sensor cable secure</li>
+<li>No frayed wires</li>
+<li>Solder joints intact</li>
+<li>
+<p>XBee seated (if present)</p>
+</li>
+<li>
+<p>[ ] <strong>Visual PCB check</strong></p>
+</li>
+<li>No burn marks</li>
+<li>No corrosion</li>
+<li>All components present</li>
+<li>No loose parts rattling</li>
+</ul>
+<p><strong>3. Functional Testing (10 min)</strong></p>
+<ul>
+<li>[ ] <strong>Power test</strong></li>
+<li>Logger powers on</li>
+<li>LED sequence normal</li>
+<li>
+<p>No error indicators</p>
+</li>
+<li>
+<p>[ ] <strong>Clock check</strong></p>
+</li>
+<li>Time accurate (within 1 minute)</li>
+<li>Date correct</li>
+<li>
+<p>If off: Re-set using set_clock.ino</p>
+</li>
+<li>
+<p>[ ] <strong>Sensor test</strong></p>
+</li>
+<li>Take several test readings</li>
+<li>Values reasonable and consistent</li>
+<li>No error messages</li>
+<li>
+<p>Standard deviation acceptable</p>
+</li>
+<li>
+<p>[ ] <strong>SD card test</strong></p>
+</li>
+<li>Card readable</li>
+<li>Recent data present</li>
+<li>Files not corrupted</li>
+<li>
+<p>Free space adequate</p>
+</li>
+<li>
+<p>[ ] <strong>Telemetry test</strong> (if applicable)</p>
+</li>
+<li>XBee LED activity</li>
+<li>Recent successful transmission</li>
+<li>Signal strength adequate</li>
+</ul>
+<p><strong>4. Cleaning (10 min)</strong></p>
+<p>See <a href="#cleaning-procedures">Cleaning Procedures</a> section below.</p>
+<p><strong>5. Data Management (5 min)</strong></p>
+<ul>
+<li>[ ] Download all data from SD card</li>
+<li>[ ] Verify data integrity</li>
+<li>[ ] Backup data (multiple locations)</li>
+<li>[ ] Optional: Replace SD card with fresh formatted card</li>
+<li>[ ] Document data retrieval in log</li>
+</ul>
+<p><strong>6. Documentation (5 min)</strong></p>
+<p>Record in maintenance log:
+- Date and time of visit
+- Person performing maintenance
+- Battery voltage
+- Any issues found and resolved
+- Parts replaced
+- Next scheduled maintenance date
+- Photos taken</p>
+<hr />
+<h2 id="annual-service">Annual Service<a class="headerlink" href="#annual-service" title="Permanent link">&para;</a></h2>
+<h3 id="time-required-1-2-hours">Time Required: 1-2 hours<a class="headerlink" href="#time-required-1-2-hours" title="Permanent link">&para;</a></h3>
+<p>Annual service is a comprehensive overhaul and includes all quarterly tasks plus:</p>
+<h3 id="additional-annual-tasks">Additional Annual Tasks<a class="headerlink" href="#additional-annual-tasks" title="Permanent link">&para;</a></h3>
+<p><strong>1. Battery Management</strong></p>
+<ul>
+<li>[ ] <strong>Main battery (18650)</strong></li>
+<li>Replace regardless of voltage (12-month lifecycle)</li>
+<li>Or test capacity with battery analyzer</li>
+<li>Clean battery compartment thoroughly</li>
+<li>
+<p>Record old battery voltage and new battery info</p>
+</li>
+<li>
+<p>[ ] <strong>Backup battery (CR1220)</strong></p>
+</li>
+<li>Replace (inexpensive, ensure timekeeping)</li>
+<li>Check holder for corrosion</li>
+<li>Test clock retention after replacement</li>
+</ul>
+<p><strong>2. Component Replacement</strong></p>
+<ul>
+<li>[ ] <strong>Desiccant packs</strong></li>
+<li>Replace all desiccant</li>
+<li>
+<p>Use indicator type to monitor</p>
+</li>
+<li>
+<p>[ ] <strong>Seals and gaskets</strong></p>
+</li>
+<li>Inspect for wear, cracks, compression set</li>
+<li>Replace if questionable</li>
+<li>
+<p>Apply thin layer of silicone grease</p>
+</li>
+<li>
+<p>[ ] <strong>Fasteners</strong></p>
+</li>
+<li>Check all screws, bolts, zip ties</li>
+<li>Replace any corroded or damaged</li>
+<li>Apply thread locker if needed</li>
+</ul>
+<p><strong>3. Deep Cleaning</strong></p>
+<ul>
+<li>[ ] Clean all external surfaces</li>
+<li>[ ] Clean sensor thoroughly (see Sensor Cleaning)</li>
+<li>[ ] Clean PCB if any dust/debris (isopropyl alcohol)</li>
+<li>[ ] Clean battery contacts with DeoxIT</li>
+<li>[ ] Clean enclosure gasket surfaces</li>
+</ul>
+<p><strong>4. Firmware and Configuration</strong></p>
+<ul>
+<li>[ ] <strong>Update firmware</strong> (if new version available)</li>
+<li>Backup current configuration</li>
+<li>Test new firmware</li>
+<li>
+<p>Verify all functions</p>
+</li>
+<li>
+<p>[ ] <strong>Verify configuration</strong></p>
+</li>
+<li>Review measurement intervals</li>
+<li>Check telemetry settings</li>
+<li>Confirm clock accuracy</li>
+<li>Update if requirements changed</li>
+</ul>
+<p><strong>5. Calibration Check</strong></p>
+<ul>
+<li>[ ] <strong>Distance measurement verification</strong></li>
+<li>Measure to known target</li>
+<li>Compare logger reading with manual measurement</li>
+<li>Difference should be &lt;2% for Wari, &lt;1% for Lidar</li>
+<li>
+<p>Document any offset</p>
+</li>
+<li>
+<p>[ ] <strong>Voltage measurement</strong></p>
+</li>
+<li>Compare logged voltage with multimeter reading</li>
+<li>Should agree within 0.05V</li>
+<li>If off, may need calibration constant update</li>
+</ul>
+<p><strong>6. Structural Assessment</strong></p>
+<ul>
+<li>[ ] <strong>Mounting evaluation</strong></li>
+<li>Is mounting still optimal?</li>
+<li>Any structural changes to site?</li>
+<li>Clearances still adequate?</li>
+<li>
+<p>Consider improvements/repositioning</p>
+</li>
+<li>
+<p>[ ] <strong>Environmental changes</strong></p>
+</li>
+<li>New vegetation growth patterns?</li>
+<li>Bank erosion affecting mounting?</li>
+<li>Access still reasonable?</li>
+<li>Site security adequate?</li>
+</ul>
+<p><strong>7. Comprehensive Testing</strong></p>
+<ul>
+<li>[ ] <strong>Extended functional test</strong></li>
+<li>Run for 1+ hour while on-site</li>
+<li>Verify multiple measurement cycles</li>
+<li>Check all LED behaviors</li>
+<li>Test telemetry transmission (if applicable)</li>
+<li>
+<p>Download and inspect data</p>
+</li>
+<li>
+<p>[ ] <strong>Stress test</strong> (optional)</p>
+</li>
+<li>Test with high frequency logging</li>
+<li>Verify no errors under load</li>
+<li>Check battery drain rate</li>
+</ul>
+<p><strong>8. Documentation and Planning</strong></p>
+<ul>
+<li>[ ] Complete annual maintenance report</li>
+<li>[ ] Update site documentation</li>
+<li>[ ] Take comprehensive photos</li>
+<li>[ ] Plan next year's maintenance</li>
+<li>[ ] Identify any needed replacements/upgrades</li>
+<li>[ ] Budget for parts and labor</li>
+</ul>
+<hr />
+<h2 id="cleaning-procedures">Cleaning Procedures<a class="headerlink" href="#cleaning-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="sensor-cleaning">Sensor Cleaning<a class="headerlink" href="#sensor-cleaning" title="Permanent link">&para;</a></h3>
+<h4 id="ultrasound-wari">Ultrasound (Wari)<a class="headerlink" href="#ultrasound-wari" title="Permanent link">&para;</a></h4>
+<p><strong>Frequency:</strong> Quarterly minimum, monthly in dusty/insect-heavy areas</p>
+<p><strong>Materials:</strong>
+- Soft brush (e.g., lens brush, soft toothbrush)
+- Compressed air (clean, dry)
+- Lint-free cloth
+- Isopropyl alcohol (optional, for stubborn deposits)</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>
+<p><strong>Power off logger</strong> (or time cleaning between measurements)</p>
+</li>
+<li>
+<p><strong>Brush away loose debris</strong></p>
+</li>
+<li>Use soft brush to remove dust, cobwebs, insects</li>
+<li>Brush in one direction (top to bottom)</li>
+<li>
+<p>Don't apply pressure to sensor face</p>
+</li>
+<li>
+<p><strong>Compressed air</strong></p>
+</li>
+<li>Short bursts from 6-12 inches away</li>
+<li>Don't invert can (liquid may spray)</li>
+<li>
+<p>Keep nozzle straight, not angled</p>
+</li>
+<li>
+<p><strong>Stubborn deposits</strong></p>
+</li>
+<li>Dampen (not wet) lint-free cloth with isopropyl alcohol</li>
+<li>Gently wipe sensor mesh</li>
+<li>
+<p>Allow to air dry completely</p>
+</li>
+<li>
+<p><strong>Verify clearance</strong></p>
+</li>
+<li>Check nothing obstructing sensor</li>
+<li>Take test measurement</li>
+<li>Compare with pre-cleaning reading</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Do Not:</p>
+<ul>
+<li>Use water (may damage sensor)</li>
+<li>Apply pressure to transducer</li>
+<li>Use harsh chemicals</li>
+<li>Touch with fingers (oils transfer)</li>
+<li>Clean while sensor is active</li>
+</ul>
+</div>
+<h4 id="lidar">Lidar<a class="headerlink" href="#lidar" title="Permanent link">&para;</a></h4>
+<p><strong>Frequency:</strong> Weekly to monthly depending on conditions</p>
+<p><strong>Materials:</strong>
+- Lens cleaning tissue or microfiber cloth
+- Compressed air
+- Isopropyl alcohol (90%+)
+- NO abrasive materials</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Inspect lens</strong></li>
+<li>Look for dust, condensation, fingerprints, cobwebs</li>
+<li>
+<p>Identify type of contamination</p>
+</li>
+<li>
+<p><strong>Dust removal</strong></p>
+</li>
+<li>Use compressed air first</li>
+<li>Lens brush for stubborn particles</li>
+<li>
+<p>Never wipe dry dust (scratches lens)</p>
+</li>
+<li>
+<p><strong>Lens cleaning</strong></p>
+</li>
+<li>Dampen lens tissue with alcohol</li>
+<li>Wipe in circular motion, center outward</li>
+<li>Use clean section of tissue for each pass</li>
+<li>
+<p>Buff with dry lens tissue</p>
+</li>
+<li>
+<p><strong>Test measurement</strong></p>
+</li>
+<li>Take reading at known distance</li>
+<li>Compare with expected value</li>
+<li>Repeat cleaning if readings off</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Lidar Lens is Critical</p>
+<p>The lidar lens is precision optics. <strong>Never:</strong>
+- Touch with fingers
+- Use paper towel (scratches)
+- Use household cleaners
+- Apply pressure
+- Clean with contaminated cloth</p>
+</div>
+<h3 id="enclosure-cleaning">Enclosure Cleaning<a class="headerlink" href="#enclosure-cleaning" title="Permanent link">&para;</a></h3>
+<p><strong>Frequency:</strong> Annually or as needed</p>
+<p><strong>Exterior:</strong>
+1. Wipe with damp cloth
+2. Remove dirt, algae, bird droppings
+3. Check for damage to coating/paint
+4. Dry thoroughly</p>
+<p><strong>Interior:</strong>
+1. Remove batteries
+2. Inspect for dust, insect debris, corrosion
+3. Vacuum loose debris (be gentle near components)
+4. Wipe with lint-free cloth and isopropyl alcohol if needed
+5. Allow to dry completely
+6. Replace desiccant before closing</p>
+<h3 id="battery-contact-cleaning">Battery Contact Cleaning<a class="headerlink" href="#battery-contact-cleaning" title="Permanent link">&para;</a></h3>
+<p><strong>Frequency:</strong> Annually or if corrosion appears</p>
+<p><strong>Procedure:</strong>
+1. Remove battery
+2. Inspect contacts for oxidation/corrosion
+3. Clean with pencil eraser (light abrasion)
+4. Wipe with isopropyl alcohol
+5. Optional: Apply thin layer of DeoxIT contact enhancer
+6. Allow to dry
+7. Reinstall battery</p>
+<h3 id="sd-card-maintenance">SD Card Maintenance<a class="headerlink" href="#sd-card-maintenance" title="Permanent link">&para;</a></h3>
+<p><strong>Frequency:</strong> Annually</p>
+<p><strong>Procedure:</strong>
+1. Download all data
+2. Remove card
+3. Clean contacts with isopropyl alcohol and lint-free cloth</p>
+<hr />
+<h2 id="troubleshooting-during-maintenance">Troubleshooting During Maintenance<a class="headerlink" href="#troubleshooting-during-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues-found-during-inspection">Common Issues Found During Inspection<a class="headerlink" href="#common-issues-found-during-inspection" title="Permanent link">&para;</a></h3>
+<p><strong>1. Battery Low/Dead</strong>
+- <strong>Solution:</strong> Replace battery
+- <strong>Prevention:</strong> Monitor voltage trend, replace proactively</p>
+<p><strong>2. SD Card Full</strong>
+- <strong>Solution:</strong> Download data, delete old files or replace card
+- <strong>Prevention:</strong> Track data accumulation rate</p>
+<p><strong>3. Clock Reset</strong>
+- <strong>Solution:</strong> Replace CR1220, reset clock with set_clock.ino
+- <strong>Prevention:</strong> Replace CR1220 annually</p>
+<p><strong>4. Sensor Dirty/Obstructed</strong>
+- <strong>Solution:</strong> Clean per procedures above
+- <strong>Prevention:</strong> More frequent cleaning schedule</p>
+<p><strong>5. Mounting Loose</strong>
+- <strong>Solution:</strong> Tighten/replace fasteners
+- <strong>Prevention:</strong> Use thread locker, check fastener condition</p>
+<p><strong>6. Corrosion on Contacts</strong>
+- <strong>Solution:</strong> Clean with isopropyl alcohol, apply DeoxIT
+- <strong>Prevention:</strong> Keep enclosure sealed, use desiccant</p>
+<p><strong>7. Vegetation Obstruction</strong>
+- <strong>Solution:</strong> Trim vegetation, expand clear zone
+- <strong>Prevention:</strong> More frequent trimming, herbicide (carefully)</p>
+<p><strong>8. Water Ingress</strong>
+- <strong>Solution:</strong> Dry completely, replace gaskets, reseal
+- <strong>Prevention:</strong> Check seals regularly, improve drainage</p>
+<p><strong>9. No Recent Data</strong>
+- <strong>Solution:</strong> Check code running, verify SD card, test sensor
+- <strong>Prevention:</strong> Remote monitoring alerts</p>
+<p><strong>10. Telemetry Failure</strong>
+- <strong>Solution:</strong> Check XBee, SIM card, signal, settings
+- <strong>Prevention:</strong> Monitor telemetry health remotely</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>📖 <a href="../../quick-start/first-deployment-checklist/">First Deployment Checklist</a> - Initial setup verification</li>
+<li>🔋 <a href="../battery-power-guide/">Battery &amp; Power Guide</a> - Battery health monitoring</li>
+<li>🔧 <a href="../internal-components/">Internal Components</a> - Component-specific maintenance</li>
+<li>🚨 <a href="../../troubleshooting/common-issues/">Troubleshooting</a> - Fixing issues found during maintenance</li>
+</ul>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">Well-Maintained Logger = Reliable Data</p>
+<p>Consistent, documented maintenance is the foundation of long-term successful monitoring. A small investment of time prevents major problems and ensures continuous, high-quality data collection.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Riverlabs Ltd
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ICHydro" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
