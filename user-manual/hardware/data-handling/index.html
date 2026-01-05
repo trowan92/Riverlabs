@@ -1893,16 +1893,34 @@
 <p>A flash chip can also be installed on some board varients to backup data (especially helpful for telemetered loggers), this is activated in the firmware using:</p>
 <p><code>#define FLASH</code></p>
 <p>A flow chart of this is shown below:</p>
-<pre class="mermaid"><code>flowchart TD
-    A[Sensor Reading] --&gt; B[Store in EEPROM Buffer]
-    B --&gt; C{Flush Condition Met?}
-    C --&gt;|FLUSHAFTER reached| D[Write to SD Card]
-    C --&gt;|Reset Button Pressed| D
-    C --&gt;|No| B
-    D --&gt; E{FLASH Chip Enabled?}
-    E --&gt;|Yes| F[Backup to Flash]
-    E --&gt;|No| G[Data Stored]
-    F --&gt; G</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    subgraph left [Manual Trigger]
+        RST[Reset Button&lt;br/&gt;Pressed]
+    end
+
+    subgraph center [Main Data Flow]
+        A[Sensor Reading] --&gt; B[Store in EEPROM Buffer]
+        B --&gt; C{Flush Condition&lt;br/&gt;Met?}
+        C --&gt;|FLUSHAFTER&lt;br/&gt;reached| D[Flush EEPROM&lt;br/&gt;to SD Card]
+        C --&gt;|No| B
+        D --&gt; G[Data Stored]
+    end
+
+    subgraph right [Backup Storage]
+        E{FLASH Chip&lt;br/&gt;Enabled?}
+        F[Backup to&lt;br/&gt;Flash Memory]
+    end
+
+    RST -.-&gt;|Triggers| D
+    D --&gt; E
+    E --&gt;|Yes| F
+    E --&gt;|No| G
+    F --&gt; G
+
+    style RST fill:#fbbf24,stroke:#f59e0b,stroke-width:2px,color:#000
+    style D fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
+    style F fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    style G fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff</code></pre>
 <div class="admonition danger">
 <p class="admonition-title">Data Safety Warning</p>
 <p>Do not take out the SD card while the LED light is on, as this may damage the card and make it unreadable.</p>
