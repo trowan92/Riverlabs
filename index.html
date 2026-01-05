@@ -988,7 +988,7 @@
   <span class="md-ellipsis">
     
   
-    Configuration
+    Telemetry Configuration
   
 
     
@@ -1004,7 +1004,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Configuration
+    Telemetry Configuration
   
 
           </label>
@@ -1017,14 +1017,14 @@
   
   
     <li class="md-nav__item">
-      <a href="start/" class="md-nav__link">
+      <a href="user-manual/telemetry/setup-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Cellular Setup Guide
   
 
     
@@ -1045,14 +1045,14 @@
   
   
     <li class="md-nav__item">
-      <a href="user-manual/telemetry/setup-guide/" class="md-nav__link">
+      <a href="user-manual/telemetry/lora-lorawan-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Telemetry Setup Guide
+    LoRa / LoRaWAN Guide
   
 
     
@@ -1169,10 +1169,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1235,62 +1231,6 @@
     
   
     Diagnostic Flowcharts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="user-manual/troubleshooting/common-issues/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Common Issues
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="user-manual/troubleshooting/faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FAQ
   
 
     
@@ -1799,40 +1739,46 @@
   <a href="#overview-and-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview and specifications
+        Overview and Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview and Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wari
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#power-considerations" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#lidar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Power considerations
+        Lidar
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#programming-the-loggers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Programming the loggers
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#telemetry" class="md-nav__link">
+  <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Telemetry
+        Documentation
       
     </span>
   </a>
@@ -1876,50 +1822,25 @@
 
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The Riverlabs loggers are a series of low-cost environmental loggers based on the Arduino bootloader. This makes them easy to program with a PC without the need for additional hardware (except for an FTDI cable) or proprietary software. It also provides the flexibility to extend and alter them to fit specific applications and workflows.</p>
-<h2 id="overview-and-specifications">Overview and specifications<a class="headerlink" href="#overview-and-specifications" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>    &lt;h3&gt;Wari&lt;/h3&gt;
-    ![Wari logger](images/Wari_v1.jpg)
-
-    &lt;ul&gt;
-    &lt;li&gt;Maxbotix MB7389 Ultrasound sensor&lt;/li&gt;
-    &lt;li&gt;0.3m - 5m range, 1mm resolution&lt;/li&gt;
-    &lt;li&gt;Atmel Atmega328 CPU&lt;/li&gt;
-    &lt;li&gt;Arduino Pro Mini bootloader&lt;/li&gt;
-    &lt;/ul&gt;
-
-
-
-    &lt;h3&gt;Lidar&lt;/h3&gt;
-    ![ logger](images/WMOnode.jpg)
-
-    &lt;ul&gt;
-    &lt;li&gt;Garmin Lidarlite v3HP sensor&lt;/li&gt;
-    &lt;li&gt;0.05 - 35m range, 1cm resulution&lt;/li&gt;
-    &lt;li&gt;Atmel Atmega328 CPU&lt;/li&gt;
-    &lt;li&gt; Arduino Pro Mini bootloader&lt;/li&gt;
-    &lt;/ul&gt;
-</code></pre></div>
-<h2 id="power-considerations">Power considerations<a class="headerlink" href="#power-considerations" title="Permanent link">&para;</a></h2>
-<p>The logger requires two batteries. The main power source is a 3.7V 18650 lithium battery, which is a commonly available battery that can be found in may electronic stores. These are rechargeable batteries with a capacity of around 2000 mAh. Make sure that you purchase an appropriate charger. They cannot be charged with Ni-MH chargers!</p>
-<p>Also mind the polarity when inserting the battery. The logger versions without solar charging circuit are protected for reverse polarity, but those with a solar charging circuit are not. Inserting the battery wrongly will cause permanent damage to those loggers and may cause fire.</p>
-<p>In addition to the main battery, the circuit board also has a slot for a small CR1220 coin battery, which serves as backup for the real-time clock. You can run the logger without this battery; however in that case the logger will lose the time when the main battery is removed.</p>
-<h2 id="programming-the-loggers">Programming the loggers<a class="headerlink" href="#programming-the-loggers" title="Permanent link">&para;</a></h2>
-<p>The loggers can be programmed with any Arduino compatible IDE. The instructions here use the official Arduino IDE but you can also use other systems such as Platform.io. The loggers based on an Atmega CPU do not come with an USB port (to save cost) so you will need an FTDI cable or adapter.</p>
-<p>On first use of the logger, you will need to set the clock with the set_clock.ino script. This only has to be done once, except if both batteries are removed or have run out. When using telemetry, the clock needs to be set to the UTC time zone.</p>
-<p>The main script of the logger is wari.ino. The main settings, such as logging and telemetry frequency, can be found at the start of the script. Set them as you like, but be aware that a higher frequency of logging and telemetry will lead to a shorter battery life.</p>
-<h2 id="telemetry">Telemetry<a class="headerlink" href="#telemetry" title="Permanent link">&para;</a></h2>
-<p>The loggers use a DIGI XBee 3G cellular modem, and transmit via the COAP protocol (MQTT is under development). You will need to set up a COAP server such as Thingsboard to receive the data.</p>
-<p>For deployment in the logger, the XBee needs to be configured to use API mode (with escapes). If you purchased your loggers through Riverlabs, then this is already done. However, if you ever need to do this yourself, you need to use the DIGI's free XCTU software, together with an FTDI cable or adapter. The crucial settings are as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BD: 9600
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>NB: no parity
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>SB: one stop bit
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>RO: 3
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>TD: 0
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>FT: 681
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>AP: API mode with escapes
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>SM: pin sleep [1]
-</code></pre></div>
-<p>Setting these incorrectly may prevent the logger from communicating with the XBee.</p>
+<h2 id="overview-and-specifications">Overview and Specifications<a class="headerlink" href="#overview-and-specifications" title="Permanent link">&para;</a></h2>
+<h3 id="wari">Wari<a class="headerlink" href="#wari" title="Permanent link">&para;</a></h3>
+<p><img alt="Wari logger" src="images/Wari_v1.jpg" /></p>
+<ul>
+<li>Maxbotix MB7389 Ultrasound sensor</li>
+<li>0.3m - 5m range, 1mm resolution</li>
+<li>Atmel Atmega328 CPU</li>
+<li>Arduino Pro Mini bootloader</li>
+</ul>
+<h3 id="lidar">Lidar<a class="headerlink" href="#lidar" title="Permanent link">&para;</a></h3>
+<p><img alt="Lidar logger" src="images/WMOnode.jpg" /></p>
+<ul>
+<li>Garmin Lidarlite v3HP sensor</li>
+<li>0.05 - 35m range, 1cm resolution</li>
+<li>Atmel Atmega328 CPU</li>
+<li>Arduino Pro Mini bootloader</li>
+</ul>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<p>To purchase any of these sensors please visit <a href="https://riverlabs.uk">riverlabs.uk</a></p>
 
 
 

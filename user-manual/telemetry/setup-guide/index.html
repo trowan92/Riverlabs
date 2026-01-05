@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://trowan92.github.io/Riverlabs/user-manual/telemetry/setup-guide/">
       
       
-        <link rel="prev" href="../../../start/">
+        <link rel="prev" href="../../../data-handling/">
       
       
-        <link rel="next" href="../thingsboard-configuration/">
+        <link rel="next" href="../lora-lorawan-guide/">
       
       
         
@@ -33,7 +33,7 @@
     
     
       
-        <title>Telemetry Setup Guide - Riverlabs Documentation</title>
+        <title>Cellular Setup Guide - Riverlabs Documentation</title>
       
     
     
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Telemetry Setup Guide
+              Cellular Setup Guide
             
           </span>
         </div>
@@ -1011,7 +1011,7 @@
   <span class="md-ellipsis">
     
   
-    Configuration
+    Telemetry Configuration
   
 
     
@@ -1027,39 +1027,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Configuration
+    Telemetry Configuration
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../start/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting Started
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1084,7 +1056,7 @@
   <span class="md-ellipsis">
     
   
-    Telemetry Setup Guide
+    Cellular Setup Guide
   
 
     
@@ -1102,7 +1074,7 @@
   <span class="md-ellipsis">
     
   
-    Telemetry Setup Guide
+    Cellular Setup Guide
   
 
     
@@ -1638,6 +1610,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../lora-lorawan-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LoRa / LoRaWAN Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../thingsboard-configuration/" class="md-nav__link">
         
   
@@ -1734,10 +1734,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1803,62 +1799,6 @@
     
   
     Diagnostic Flowcharts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/common-issues/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Common Issues
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FAQ
   
 
     
@@ -3048,19 +2988,35 @@
 <p><strong>SIM Type:</strong> Micro-SIM (3FF)</p>
 <p><strong>Installation Steps:</strong></p>
 <ol>
-<li><strong>Obtain activated SIM</strong> from provider</li>
-<li><strong>Note APN settings</strong> (provided by carrier)</li>
+<li>
+<p><strong>Obtain activated SIM</strong> from provider</p>
+</li>
+<li>
+<p><strong>Note APN settings</strong> (provided by carrier)</p>
+<ul>
 <li>APN name (e.g., "m2m.com.attwireless.com")</li>
 <li>Username (if required)</li>
 <li>Password (if required)</li>
-<li><strong>Locate SIM slot</strong> on XBee module</li>
+</ul>
+</li>
+<li>
+<p><strong>Locate SIM slot</strong> on XBee module</p>
+<ul>
 <li>Usually on underside</li>
 <li>Spring-loaded tray</li>
-<li><strong>Insert SIM</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Insert SIM</strong></p>
+<ul>
 <li>Correct orientation (notched corner)</li>
 <li>Push until clicks</li>
 <li>Ensure fully seated</li>
-<li><strong>Record ICCID</strong> (SIM card number for tracking)</li>
+</ul>
+</li>
+<li>
+<p><strong>Record ICCID</strong> (SIM card number for tracking)</p>
+</li>
 </ol>
 <hr />
 <h2 id="step-2-xbee-configuration">Step 2: XBee Configuration<a class="headerlink" href="#step-2-xbee-configuration" title="Permanent link">&para;</a></h2>
@@ -3262,10 +3218,12 @@
 <li>In XBee Studio, navigate to <strong>"Cellular Network"</strong> section</li>
 <li>Click <strong>"Connect to Network"</strong></li>
 <li>Wait for connection (may take 30-60 seconds)</li>
-<li>Check for:</li>
+<li>Check for:<ul>
 <li>Network registered: Yes</li>
 <li>Signal strength: &gt;-100 dBm (stronger is better)</li>
 <li>IP address assigned</li>
+</ul>
+</li>
 </ol>
 <p><strong>Troubleshooting Connection Issues:</strong></p>
 <table>
@@ -3313,33 +3271,39 @@
 </code></pre></div>
 <p><strong>Adjust for Your Setup:</strong></p>
 <ol>
-<li><strong>TELEMETRY_INTERVAL</strong></li>
+<li>
+<p><strong>TELEMETRY_INTERVAL</strong></p>
+<ul>
 <li>How often to transmit</li>
 <li>Example: If logging every 15 min, interval 4 = transmit hourly</li>
-<li>
-<p>Higher interval = better battery life</p>
+<li>Higher interval = better battery life</li>
+</ul>
 </li>
 <li>
 <p><strong>SERVER_URL</strong></p>
-</li>
+<ul>
 <li>Your ThingsBoard or server endpoint</li>
 <li>Include authentication token in URL</li>
-<li>
-<p>See <a href="../thingsboard-configuration/">ThingsBoard Configuration</a> for details</p>
+<li>See <a href="../thingsboard-configuration/">ThingsBoard Configuration</a> for details</li>
+</ul>
 </li>
 <li>
 <p><strong>XBEE_BAUD</strong></p>
-</li>
+<ul>
 <li>Must match XBee BD setting</li>
 <li>Default: 9600</li>
+</ul>
+</li>
 </ol>
 <h3 id="upload-code">Upload Code<a class="headerlink" href="#upload-code" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Connect logger</strong> via FTDI cable</li>
 <li><strong>Open Arduino IDE</strong></li>
-<li><strong>Load appropriate sketch</strong></li>
+<li><strong>Load appropriate sketch</strong><ul>
 <li><code>wari_3G.ino</code> for Wari with telemetry</li>
 <li><code>wari_lidar_cellular.ino</code> for Lidar with telemetry</li>
+</ul>
+</li>
 <li><strong>Verify settings</strong> above are correct</li>
 <li><strong>Compile</strong> (check for errors)</li>
 <li><strong>Upload</strong> to logger</li>
@@ -3349,46 +3313,52 @@
 <hr />
 <h2 id="step-4-integration-testing">Step 4: Integration Testing<a class="headerlink" href="#step-4-integration-testing" title="Permanent link">&para;</a></h2>
 <h3 id="bench-test-before-deployment">Bench Test Before Deployment<a class="headerlink" href="#bench-test-before-deployment" title="Permanent link">&para;</a></h3>
-<p><strong>Setup:</strong>
-1. Logger with XBee installed (SIM card in place)
-2. Power on with charged battery
-3. Serial monitor connected (optional but recommended)
-4. Near window for good cellular signal</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Logger with XBee installed (SIM card in place)</li>
+<li>Power on with charged battery</li>
+<li>Serial monitor connected (optional but recommended)</li>
+<li>Near window for good cellular signal</li>
+</ol>
 <p><strong>Test Procedure:</strong></p>
 <ol>
-<li><strong>Power On</strong></li>
+<li>
+<p><strong>Power On</strong></p>
+<ul>
 <li>Logger boots</li>
 <li>Initializes XBee</li>
-<li>
-<p>XBee connects to network (watch LED)</p>
+<li>XBee connects to network (watch LED)</li>
+</ul>
 </li>
 <li>
 <p><strong>Wait for Measurement</strong></p>
-</li>
+<ul>
 <li>Logger takes measurement(s)</li>
 <li>Stores to SD card</li>
-<li>
-<p>Prepares telemetry packet</p>
+<li>Prepares telemetry packet</li>
+</ul>
 </li>
 <li>
 <p><strong>Observe Transmission</strong></p>
-</li>
+<ul>
 <li>XBee LED activity (if visible)</li>
-<li>
-<p>Serial debug messages (if enabled):
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Connecting to network...
+<li>Serial debug messages (if enabled):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Connecting to network...
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Network connected
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Sending data...
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>HTTP POST: 200 OK
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Transmission successful
-</code></pre></div></p>
+</code></pre></div></li>
+</ul>
 </li>
 <li>
 <p><strong>Verify Reception</strong></p>
-</li>
+<ul>
 <li>Check ThingsBoard dashboard</li>
 <li>Data should appear within 1-2 minutes</li>
 <li>Verify timestamp and values correct</li>
+</ul>
+</li>
 </ol>
 <p><strong>Expected Timing:</strong>
 - Boot: 5-10 seconds
@@ -3427,11 +3397,13 @@
 <ol>
 <li><strong>Bring phone on same carrier</strong> as SIM</li>
 <li><strong>Check signal strength</strong> at installation location</li>
-<li><strong>Consider antenna position:</strong></li>
+<li><strong>Consider antenna position:</strong><ul>
 <li>Vertical orientation often best</li>
 <li>Higher = better signal</li>
 <li>Away from metal obstructions</li>
 <li>Clear view of sky preferred</li>
+</ul>
+</li>
 </ol>
 <p><strong>Minimum Signal Requirements:</strong>
 - LTE-M/NB-IoT: -110 dBm minimum, -90 dBm good
@@ -3467,25 +3439,29 @@
 - Lidar: ~10-20 days (15-min logging)</p>
 <p><strong>Optimization Strategies:</strong></p>
 <ol>
-<li><strong>Reduce transmission frequency</strong></li>
-<li>Measure every 15 min, transmit hourly</li>
 <li>
-<p>4× battery life improvement vs. transmit-every-measurement</p>
+<p><strong>Reduce transmission frequency</strong></p>
+<ul>
+<li>Measure every 15 min, transmit hourly</li>
+<li>4× battery life improvement vs. transmit-every-measurement</li>
+</ul>
 </li>
 <li>
 <p><strong>Scheduled transmissions</strong></p>
-</li>
+<ul>
 <li>Transmit once or twice daily</li>
 <li>Massive power savings</li>
-<li>
-<p>SD card holds full resolution data</p>
+<li>SD card holds full resolution data</li>
+</ul>
 </li>
 <li>
 <p><strong>Adaptive transmission</strong></p>
-</li>
+<ul>
 <li>Transmit frequently during events</li>
 <li>Reduce during stable conditions</li>
 <li>Requires more complex code</li>
+</ul>
+</li>
 </ol>
 <p>See <a href="../../hardware/battery-power-guide/">Battery &amp; Power Guide</a> for detailed calculations.</p>
 <hr />

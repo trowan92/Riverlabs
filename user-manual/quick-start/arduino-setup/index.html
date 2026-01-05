@@ -731,6 +731,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Understanding the Arduino IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#board-settings_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Board Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1230,7 +1258,7 @@
   <span class="md-ellipsis">
     
   
-    Configuration
+    Telemetry Configuration
   
 
     
@@ -1246,7 +1274,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Configuration
+    Telemetry Configuration
   
 
           </label>
@@ -1259,14 +1287,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../start/" class="md-nav__link">
+      <a href="../../telemetry/setup-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Cellular Setup Guide
   
 
     
@@ -1287,14 +1315,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../telemetry/setup-guide/" class="md-nav__link">
+      <a href="../../telemetry/lora-lorawan-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Telemetry Setup Guide
+    LoRa / LoRaWAN Guide
   
 
     
@@ -1411,10 +1439,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1480,62 +1504,6 @@
     
   
     Diagnostic Flowcharts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/common-issues/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Common Issues
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FAQ
   
 
     
@@ -2168,6 +2136,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Understanding the Arduino IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#board-settings_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Board Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2327,27 +2323,40 @@
 </ol>
 <p>If no port appears, check that FTDI drivers are properly installed.</p>
 <h2 id="understanding-the-arduino-ide">Understanding the Arduino IDE<a class="headerlink" href="#understanding-the-arduino-ide" title="Permanent link">&para;</a></h2>
-<p>The Arduino IDE has a straightforward interface:</p>
-<p><strong>Main Components:</strong></p>
+<p>The Arduino IDE has a straightforward interface with two main windows:</p>
+<h3 id="main-components">Main Components<a class="headerlink" href="#main-components" title="Permanent link">&para;</a></h3>
+<p><img alt="Arduino IDE Overview" src="../../../images/arduino1.jpg" />
+<em>The Arduino IDE showing the editor window (top) and information window (bottom)</em></p>
+<p><strong>Editor Window</strong> (top) - This is where you write and edit your code. Arduino uses a language very similar to C++. Each program (called a "sketch") consists of two main functions:</p>
 <ul>
-<li><strong>Editor Window</strong> (top) - Where you write and edit your code</li>
-<li><strong>Information Window</strong> (bottom) - Shows compilation output, upload progress, and errors</li>
-<li><strong>Toolbar</strong> (top) - Quick access buttons for common actions</li>
-<li><strong>Tools Menu</strong> - Board settings, port selection, and other configuration options</li>
+<li><code>setup()</code> - Runs once when the logger powers on</li>
+<li><code>loop()</code> - Runs repeatedly while the logger is powered</li>
 </ul>
+<p><strong>Information Window</strong> (bottom) - Displays compilation output, upload progress, and any errors that occur during the process.</p>
 <p><strong>Important Toolbar Buttons:</strong></p>
 <ul>
 <li>✓ <strong>Verify</strong> - Compiles your code to check for errors</li>
 <li>→ <strong>Upload</strong> - Compiles and uploads code to your logger</li>
 <li><strong>Serial Monitor</strong> - View real-time serial output from your logger</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Arduino Language</p>
-<p>Arduino uses a language very similar to C++. Each program (called a "sketch") has two main functions:</p>
+<h3 id="board-settings_1">Board Settings<a class="headerlink" href="#board-settings_1" title="Permanent link">&para;</a></h3>
+<p>The <strong>Tools</strong> menu is where you configure critical settings for your logger:</p>
+<p><img alt="Arduino Board Settings" src="../../../images/arduino2.jpg" />
+<em>Board and processor settings in the Tools menu</em></p>
+<p>As mentioned in Step 4, you must select:</p>
 <ul>
-<li><code>setup()</code> - Runs once when the logger powers on</li>
-<li><code>loop()</code> - Runs repeatedly while the logger is powered</li>
+<li><strong>Board:</strong> Arduino Pro or Pro Mini</li>
+<li><strong>Processor:</strong> ATmega328P (3.3V, 8MHz)</li>
+<li><strong>Port:</strong> Your FTDI cable's serial port</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Testing with Blink</p>
+<p>Arduino comes with many example sketches. The classic "Blink" example (<code>File → Examples → 01.Basics → Blink</code>) can be adapted for Riverlabs loggers by replacing <code>LED_BUILTIN</code> with:</p>
+<ul>
+<li><code>8</code> for Wari loggers</li>
+<li><code>A2</code> for WMOnode loggers</li>
+</ul>
+<p>This will make the onboard LED blink, confirming your setup is working!</p>
 </div>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>Now that you have Arduino set up, you're ready to program your logger:</p>
