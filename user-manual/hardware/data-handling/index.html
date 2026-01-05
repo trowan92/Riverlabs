@@ -1893,17 +1893,16 @@
 <p>A flash chip can also be installed on some board varients to backup data (especially helpful for telemetered loggers), this is activated in the firmware using:</p>
 <p><code>#define FLASH</code></p>
 <p>A flow chart of this is shown below:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flowchart TD
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Sensor Reading] --&gt; B[Store in EEPROM Buffer]
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C{Flush Condition Met?}
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    C --&gt;|FLUSHAFTER reached| D[Write to SD Card]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    C --&gt;|Reset Button Pressed| D
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    C --&gt;|No| B
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    D --&gt; E{FLASH Chip Enabled?}
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    E --&gt;|Yes| F[Backup to Flash]
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    E --&gt;|No| G[Data Stored]
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    F --&gt; G
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A[Sensor Reading] --&gt; B[Store in EEPROM Buffer]
+    B --&gt; C{Flush Condition Met?}
+    C --&gt;|FLUSHAFTER reached| D[Write to SD Card]
+    C --&gt;|Reset Button Pressed| D
+    C --&gt;|No| B
+    D --&gt; E{FLASH Chip Enabled?}
+    E --&gt;|Yes| F[Backup to Flash]
+    E --&gt;|No| G[Data Stored]
+    F --&gt; G</code></pre>
 <div class="admonition danger">
 <p class="admonition-title">Data Safety Warning</p>
 <p>Do not take out the SD card while the LED light is on, as this may damage the card and make it unreadable.</p>
