@@ -2295,28 +2295,20 @@
 <h2 id="flowchart-1-logger-wont-record-data">Flowchart 1: Logger Won't Record Data<a class="headerlink" href="#flowchart-1-logger-wont-record-data" title="Permanent link">&para;</a></h2>
 <h3 id="symptom">Symptom<a class="headerlink" href="#symptom" title="Permanent link">&para;</a></h3>
 <p>Logger appears to power on but no new data appears on SD card.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  Logger Won&#39;t Record Data       │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└────────────┬────────────────────┘
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>             │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>             ▼
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      Does LED blink?
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>             │
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      ┌──────┴──────┐
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     No             Yes
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>      │              │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>      ▼              ▼
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Is battery      SD card LED
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  &gt;3.3V?        or Power LED?
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>      │              │
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  ┌───┴───┐      ┌───┴───┐
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a> No      Yes    SD    Power
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  │       │      │      │
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  ▼       ▼      ▼      ▼
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>Replace  Check  Go to  Logger is
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>battery  power  SD     recording
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>         wiring Flow   (check card)
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A[Logger Won't Record Data] --&gt; B{Does LED blink?}
+    B --&gt;|No| C{Is battery &gt;3.3V?}
+    B --&gt;|Yes| D{SD card LED&lt;br/&gt;or Power LED?}
+    C --&gt;|No| E[Replace battery]
+    C --&gt;|Yes| F[Check power wiring]
+    D --&gt;|SD card LED| G[Go to SD card&lt;br/&gt;Flow below]
+    D --&gt;|Power LED| H[Logger is recording&lt;br/&gt;check card]
+
+    style A fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#fff
+    style E fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    style F fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#000
+    style G fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
+    style H fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff</code></pre>
 <h3 id="full-decision-tree">Full Decision Tree<a class="headerlink" href="#full-decision-tree" title="Permanent link">&para;</a></h3>
 <p><strong>START: Logger won't record data</strong></p>
 <p><strong>Q1: Does any LED blink when logger should be measuring?</strong></p>
@@ -2378,23 +2370,18 @@
 <h2 id="flowchart-2-sensor-readings-look-wrong">Flowchart 2: Sensor Readings Look Wrong<a class="headerlink" href="#flowchart-2-sensor-readings-look-wrong" title="Permanent link">&para;</a></h2>
 <h3 id="symptom_1">Symptom<a class="headerlink" href="#symptom_1" title="Permanent link">&para;</a></h3>
 <p>Logger records data but values are incorrect, constant, or erratic.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌─────────────────────────────────┐
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│  Sensor Readings Wrong          │
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>└────────────┬────────────────────┘
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>             │
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>             ▼
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    What&#39;s the symptom?
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>             │
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      ┌──────┼──────┬──────┐
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      │      │      │      │
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  Always  Changes  Random  Negative
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>   same    slowly   jumps   values
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      │      │      │      │
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>      ▼      ▼      ▼      ▼
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  Sensor  Temp or  Noise/  Install
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  frozen  fouling  EMI     height
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                           error
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A[Sensor Readings Wrong] --&gt; B{What's the&lt;br/&gt;symptom?}
+    B --&gt;|Always same| C[Sensor frozen]
+    B --&gt;|Changes slowly| D[Temp or fouling]
+    B --&gt;|Random jumps| E[Noise/EMI]
+    B --&gt;|Negative values| F[Install height&lt;br/&gt;error]
+
+    style A fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#fff
+    style C fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#000
+    style D fill:#fbbf24,stroke:#f59e0b,stroke-width:2px,color:#000
+    style E fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+    style F fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff</code></pre>
 <h3 id="full-decision-tree_1">Full Decision Tree<a class="headerlink" href="#full-decision-tree_1" title="Permanent link">&para;</a></h3>
 <p><strong>START: Sensor readings look wrong</strong></p>
 <p><strong>Q1: What is the symptom?</strong></p>
@@ -2471,35 +2458,23 @@
 <h2 id="flowchart-3-no-telemetry-data">Flowchart 3: No Telemetry Data<a class="headerlink" href="#flowchart-3-no-telemetry-data" title="Permanent link">&para;</a></h2>
 <h3 id="symptom_2">Symptom<a class="headerlink" href="#symptom_2" title="Permanent link">&para;</a></h3>
 <p>Logger records to SD card but ThingsBoard receives no data.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>┌─────────────────────────────────┐
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│  No Telemetry Data              │
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>└────────────┬────────────────────┘
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>             │
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>             ▼
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    Does SD card work?
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>             │
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>      ┌──────┴──────┐
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>     No             Yes
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>      │              │
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>      ▼              ▼
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>   Fix SD      Is XBee
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  first!      installed?
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>      │              │
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>      └──────┬───┌───┴───┐
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>             │  No      Yes
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>             │   │       │
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>             ▼   ▼       ▼
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>         (Done) Add   Is SIM
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                XBee  active?
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                       │
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                  ┌────┴────┐
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>                 No        Yes
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>                  │          │
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>                  ▼          ▼
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>              Activate    Go to
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>               SIM      Network
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>                        Flowchart
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A[No Telemetry Data] --&gt; B{Does SD card&lt;br/&gt;work?}
+    B --&gt;|No| C[Fix SD first!]
+    B --&gt;|Yes| D{Is XBee&lt;br/&gt;installed?}
+    D --&gt;|No| E[Add XBee]
+    D --&gt;|Yes| F{Is SIM active?}
+    F --&gt;|No| G[Activate SIM]
+    F --&gt;|Yes| H[Go to Network&lt;br/&gt;Flowchart]
+    C --&gt; I[Done]
+    E --&gt; I
+
+    style A fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#fff
+    style C fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#000
+    style E fill:#fbbf24,stroke:#f59e0b,stroke-width:2px,color:#000
+    style G fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
+    style H fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    style I fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff</code></pre>
 <h3 id="full-decision-tree_2">Full Decision Tree<a class="headerlink" href="#full-decision-tree_2" title="Permanent link">&para;</a></h3>
 <p><strong>START: No telemetry data received</strong></p>
 <p><strong>Q1: Does logger record data to SD card successfully?</strong></p>
@@ -2574,26 +2549,17 @@
 <h2 id="flowchart-4-battery-drains-too-fast">Flowchart 4: Battery Drains Too Fast<a class="headerlink" href="#flowchart-4-battery-drains-too-fast" title="Permanent link">&para;</a></h2>
 <h3 id="symptom_3">Symptom<a class="headerlink" href="#symptom_3" title="Permanent link">&para;</a></h3>
 <p>Battery voltage drops faster than expected.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌─────────────────────────────────┐
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│  Battery Drains Too Fast        │
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>└────────────┬────────────────────┘
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>             │
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>             ▼
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    With or without telemetry?
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>             │
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      ┌──────┴──────┐
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>   Without        With
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  Telemetry    Telemetry
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      │            │
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      ▼            ▼
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  Logging      Transmit
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  interval     frequency
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    too         too high
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>   short          │
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>      │           ▼
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>      └──────&gt; Optimize
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>               settings
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A[Battery Drains&lt;br/&gt;Too Fast] --&gt; B{With or without&lt;br/&gt;telemetry?}
+    B --&gt;|Without| C[Logging interval&lt;br/&gt;too short]
+    B --&gt;|With| D[Transmit frequency&lt;br/&gt;too high]
+    C --&gt; E[Optimize settings]
+    D --&gt; E
+
+    style A fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#fff
+    style C fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#000
+    style D fill:#fbbf24,stroke:#f59e0b,stroke-width:2px,color:#000
+    style E fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff</code></pre>
 <h3 id="full-decision-tree_3">Full Decision Tree<a class="headerlink" href="#full-decision-tree_3" title="Permanent link">&para;</a></h3>
 <p><strong>START: Battery drains too fast</strong></p>
 <p><strong>Q1: Does logger have telemetry (XBee installed)?</strong>
@@ -2666,28 +2632,17 @@
 <h2 id="flowchart-5-sd-card-issues">Flowchart 5: SD Card Issues<a class="headerlink" href="#flowchart-5-sd-card-issues" title="Permanent link">&para;</a></h2>
 <h3 id="symptom_4">Symptom<a class="headerlink" href="#symptom_4" title="Permanent link">&para;</a></h3>
 <p>SD card won't initialize, data corrupted, or filesystem errors.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>┌─────────────────────────────────┐
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>│  SD Card Issues                 │
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>└────────────┬────────────────────┘
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>             │
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>             ▼
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    Can computer read the card?
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>             │
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>      ┌──────┴──────┐
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>     No             Yes
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>      │              │
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>      ▼              ▼
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>   Card     Is card &gt;32GB
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>  failed    or wrong format?
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>             │
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>      ┌──────┴──────┐
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>     Yes            No
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>      │              │
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>      ▼              ▼
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>   Format     Is card
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>  as FAT32    write-
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>   &lt;32GB     protected?
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A[SD Card Issues] --&gt; B{Can computer&lt;br/&gt;read the card?}
+    B --&gt;|No| C[Card failed]
+    B --&gt;|Yes| D{Is card &gt;32GB&lt;br/&gt;or wrong format?}
+    D --&gt;|Yes| E[Format as FAT32&lt;br/&gt;&lt;32GB]
+    D --&gt;|No| F{Is card&lt;br/&gt;write-protected?}
+
+    style A fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#fff
+    style C fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+    style E fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
+    style F fill:#fbbf24,stroke:#f59e0b,stroke-width:2px,color:#000</code></pre>
 <h3 id="full-decision-tree_4">Full Decision Tree<a class="headerlink" href="#full-decision-tree_4" title="Permanent link">&para;</a></h3>
 <p><strong>START: SD card issues</strong></p>
 <p><strong>Q1: Is SD card physically inserted?</strong></p>
