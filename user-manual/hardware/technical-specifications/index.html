@@ -999,6 +999,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#firmware-selection-by-serial-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware Selection by Serial Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2007,6 +2018,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#firmware-selection-by-serial-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware Selection by Serial Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2276,10 +2298,86 @@
 </div>
 <p><strong>Look for:</strong></p>
 <ul>
-<li><strong>"Wari v1"</strong>, <strong>"Wari v2"</strong>, <strong>"Wari v2.1"</strong> - Ultrasound models</li>
-<li><strong>"WMOnode"</strong>, <strong>"Lidar"</strong> - Lidar models</li>
+<li><strong>Serial Number:</strong> "RL0XXX" format (e.g., RL000123)</li>
+<li><strong>Sensor Type:</strong> Ultrasound (Maxbotix) or Lidar (Garmin)</li>
+<li><strong>Telemetry:</strong> Check for XBee cellular modem or LoRa radio</li>
 </ul>
-<p>The Wari has the following characteristics:</p>
+<h3 id="firmware-selection-by-serial-number">Firmware Selection by Serial Number<a class="headerlink" href="#firmware-selection-by-serial-number" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Serial Number Range</th>
+<th>Sensor</th>
+<th>Telemetry</th>
+<th>Firmware File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RL000001 - RL000277</td>
+<td>Ultrasound</td>
+<td>None</td>
+<td><code>wari_v1.ino</code></td>
+</tr>
+<tr>
+<td>RL000001 - RL000277</td>
+<td>Ultrasound</td>
+<td>3G Cellular</td>
+<td><code>wari_3G.ino</code></td>
+</tr>
+<tr>
+<td>RL000278 - RL000330</td>
+<td>Ultrasound</td>
+<td>None</td>
+<td><code>wari_v2.0.ino</code></td>
+</tr>
+<tr>
+<td>RL000278+</td>
+<td>Ultrasound</td>
+<td>3G Cellular</td>
+<td><code>wari_3G_v2.ino</code></td>
+</tr>
+<tr>
+<td>RL000331+</td>
+<td>Ultrasound</td>
+<td>None</td>
+<td><code>wari_v2.1.ino</code></td>
+</tr>
+<tr>
+<td>Any</td>
+<td>Ultrasound</td>
+<td>4G LTE-M/NB-IoT</td>
+<td><code>wari_4G.ino</code></td>
+</tr>
+<tr>
+<td>Any</td>
+<td>Lidar</td>
+<td>None</td>
+<td><code>wari_lidar.ino</code></td>
+</tr>
+<tr>
+<td>Any</td>
+<td>Lidar</td>
+<td>3G or 4G Cellular</td>
+<td><code>wari_lidar_cellular.ino</code> *</td>
+</tr>
+<tr>
+<td>Any</td>
+<td>Lidar</td>
+<td>LoRa Radio</td>
+<td><code>wari_lidar_lora.ino</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>*</strong> Set correct modem type (3G or LTE-M) in compiler definition at top of code</p>
+<div class="admonition info">
+<p class="admonition-title">Legacy Names</p>
+<ul>
+<li><code>wari_lidar.ino</code> was formerly <code>WMO_SD.ino</code></li>
+<li><code>wari_lidar_cellular.ino</code> was formerly <code>WMOnode.ino</code></li>
+<li><code>wari_lidar_lora.ino</code> was formerly <code>WMO_SD_lora.ino</code></li>
+</ul>
+</div>
 <h3 id="technical-specifications">Technical specifications<a class="headerlink" href="#technical-specifications" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
