@@ -591,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quick-start/first-data-download/" class="md-nav__link">
+      <a href="../../quick-start/first-data-download.md" class="md-nav__link">
         
   
   
@@ -1124,10 +1124,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logg-wont-power-on" class="md-nav__link">
+  <a href="#logger-wont-power-on" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Logg Won't Power On
+        Logger Won't Power On
       
     </span>
   </a>
@@ -1158,17 +1158,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary Checklist
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2230,10 +2219,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logg-wont-power-on" class="md-nav__link">
+  <a href="#logger-wont-power-on" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Logg Won't Power On
+        Logger Won't Power On
       
     </span>
   </a>
@@ -2264,17 +2253,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary Checklist
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2329,6 +2307,8 @@
 </div>
 <h2 id="battery-system-overview">Battery System Overview<a class="headerlink" href="#battery-system-overview" title="Permanent link">&para;</a></h2>
 <p>Riverlabs loggers use a dual-battery system for power and timekeeping.</p>
+<p><img alt="Battery types comparison" src="../../../images/Battery_Types.png" />
+<em>18650 and 14500 battery sizes with LiPo and LiFePO4 chemistry options</em></p>
 <h3 id="main-power-18650-or-14500-battery">Main Power: 18650 or 14500 Battery<a class="headerlink" href="#main-power-18650-or-14500-battery" title="Permanent link">&para;</a></h3>
 <p>Riverlabs loggers support two battery sizes with two chemistry options:</p>
 <table>
@@ -2377,8 +2357,6 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Battery types comparison" src="../../../images/Battery_Types.png" />
-<em>18650 and 14500 battery sizes with LiPo and LiFePO4 chemistry options</em></p>
 <p><strong>Chemistry Comparison:</strong></p>
 <table>
 <thead>
@@ -2439,17 +2417,19 @@
 </ul>
 </div>
 <h3 id="backup-battery-cr1220-coin-cell">Backup Battery: CR1220 Coin Cell<a class="headerlink" href="#backup-battery-cr1220-coin-cell" title="Permanent link">&para;</a></h3>
-<p><strong>Specifications:</strong>
-- <strong>Type:</strong> CR1220 Lithium coin cell (non-rechargeable)
-- <strong>Nominal Voltage:</strong> 3.0V
-- <strong>Capacity:</strong> ~40 mAh
-- <strong>Purpose:</strong> Real-time clock backup only
-- <strong>Lifespan:</strong> 5-10 years typical</p>
-<p><strong>Function:</strong>
-- Maintains clock time when main battery removed
+<p><strong>Specifications:</strong></p>
+<div class="highlight"><pre><span></span><code>- **Type:** CR1220 Lithium coin cell (non-rechargeable)
+- **Nominal Voltage:** 3.0V
+- **Capacity:** ~40 mAh
+- **Purpose:** Real-time clock backup only
+- **Lifespan:** 5-10 years typical
+</code></pre></div>
+<p><strong>Function:</strong></p>
+<div class="highlight"><pre><span></span><code>- Maintains clock time when main battery removed
 - Does NOT power logger or sensor
 - Logger operates without it (but loses time)
-- Essential for telemetry applications (UTC time)</p>
+- Essential for telemetry applications (UTC time)
+</code></pre></div>
 <hr />
 <h2 id="battery-voltage-interpretation">Battery Voltage Interpretation<a class="headerlink" href="#battery-voltage-interpretation" title="Permanent link">&para;</a></h2>
 <p>Understanding battery voltage helps predict remaining life and identify issues.</p>
@@ -2626,21 +2606,23 @@
 <p><img alt="Battery voltage discharge curve" src="../../images/battery-discharge-curve.png" />
 <em>Typical 18650 discharge curve under logger load</em></p>
 <h3 id="reading-battery-voltage">Reading Battery Voltage<a class="headerlink" href="#reading-battery-voltage" title="Permanent link">&para;</a></h3>
-<p><strong>From Logger Data:</strong>
-- Voltage recorded with each measurement
+<p><strong>From Logger Data:</strong></p>
+<div class="highlight"><pre><span></span><code>- Voltage recorded with each measurement
 - Typically last column in data file
-- Value in millivolts (e.g., 3850 = 3.85V)</p>
+- Value in millivolts (e.g., 3850 = 3.85V)
+</code></pre></div>
 <p><strong>Example Data Line:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>2025/12/27 14:30:00, 1250, 1248, 1252, 1249, 1251, 1250, 1248, 1251, 1249, 1250, 3850
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                                                                                      ^^^^
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                                                                                Battery voltage (mV)
 </code></pre></div></p>
-<p><strong>With Multimeter:</strong>
-1. Set multimeter to DC voltage
+<p><strong>With Multimeter:</strong></p>
+<div class="highlight"><pre><span></span><code>1. Set multimeter to DC voltage
 2. Access battery terminals (may require opening logger)
 3. Red probe to + terminal
 4. Black probe to - terminal
-5. Read voltage (should show 3.0-4.2V)</p>
+5. Read voltage (should show 3.0-4.2V)
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Voltage Sag During Measurement</p>
 <p>Voltage drops briefly during active measurement due to high current draw. The logged voltage is typically measured during sleep (more accurate for capacity estimation).</p>
@@ -2652,11 +2634,12 @@
 <hr />
 <h2 id="solar-charging">Solar Charging<a class="headerlink" href="#solar-charging" title="Permanent link">&para;</a></h2>
 <h3 id="solar-panel-specifications">Solar Panel Specifications<a class="headerlink" href="#solar-panel-specifications" title="Permanent link">&para;</a></h3>
-<p><strong>Typical Solar Setup:</strong>
-- Panel: 5-10W, 6V
+<p><strong>Typical Solar Setup:</strong></p>
+<div class="highlight"><pre><span></span><code>- Panel: 5-10W, 6V
 - Charge Controller: 3.7V Li-ion compatible
 - Cable: Weatherproof, strain relief
-- Mounting: Adjustable for sun angle</p>
+- Mounting: Adjustable for sun angle
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Solar Charging Limitations</p>
 <ul>
@@ -2668,11 +2651,12 @@
 <hr />
 <h2 id="battery-storage">Battery Storage<a class="headerlink" href="#battery-storage" title="Permanent link">&para;</a></h2>
 <h3 id="long-term-storage">Long-Term Storage<a class="headerlink" href="#long-term-storage" title="Permanent link">&para;</a></h3>
-<p><strong>Optimal Storage Conditions:</strong>
-- <strong>Voltage:</strong> 3.7-3.8V for LiPo (50% charge) or 3.2-3.3V for LiFePO4
-- <strong>Temperature:</strong> 15-20°C
-- <strong>Humidity:</strong> &lt;60%
-- <strong>Location:</strong> Cool, dry, away from metal objects</p>
+<p><strong>Optimal Storage Conditions:</strong></p>
+<div class="highlight"><pre><span></span><code>- **Voltage:** 3.7-3.8V for LiPo (50% charge) or 3.2-3.3V for LiFePO4
+- **Temperature:** 15-20°C
+- **Humidity:** &lt;60%
+- **Location:** Cool, dry, away from metal objects
+</code></pre></div>
 <p><strong>Storage Duration:</strong></p>
 <p><strong>LiPo Batteries:</strong></p>
 <table>
@@ -2730,21 +2714,23 @@
 </div>
 <h3 id="disposal">Disposal<a class="headerlink" href="#disposal" title="Permanent link">&para;</a></h3>
 <p><strong>Never throw batteries in regular trash!</strong></p>
-<p><strong>Proper Disposal:</strong>
-1. Discharge to &lt; 3.0V (use in logger until depleted)
+<p><strong>Proper Disposal:</strong></p>
+<div class="highlight"><pre><span></span><code>1. Discharge to &lt; 3.0V (use in logger until depleted)
 2. Tape terminals with electrical tape
 3. Take to battery recycling center
 4. Many retailers accept 18650 batteries for recycling
-5. Check local hazardous waste facilities</p>
+5. Check local hazardous waste facilities
+</code></pre></div>
 <hr />
 <h2 id="troubleshooting-power-issues">Troubleshooting Power Issues<a class="headerlink" href="#troubleshooting-power-issues" title="Permanent link">&para;</a></h2>
-<h3 id="logg-wont-power-on">Logg Won't Power On<a class="headerlink" href="#logg-wont-power-on" title="Permanent link">&para;</a></h3>
-<p><strong>Check:</strong>
-1. Battery voltage &gt; 3.0V
+<h3 id="logger-wont-power-on">Logger Won't Power On<a class="headerlink" href="#logger-wont-power-on" title="Permanent link">&para;</a></h3>
+<p><strong>Check:</strong></p>
+<div class="highlight"><pre><span></span><code>1. Battery voltage &gt; 3.3V
 2. Battery polarity correct
 3. Battery contacts clean and making contact
 4. No physical damage to logger
-5. Try known-good battery</p>
+5. Try known-good battery
+</code></pre></div>
 <h3 id="rapid-battery-drain">Rapid Battery Drain<a class="headerlink" href="#rapid-battery-drain" title="Permanent link">&para;</a></h3>
 <p><strong>Possible Causes:</strong></p>
 <table>
@@ -2769,31 +2755,20 @@
 </tbody>
 </table>
 <h3 id="voltage-reading-errors">Voltage Reading Errors<a class="headerlink" href="#voltage-reading-errors" title="Permanent link">&para;</a></h3>
-<p><strong>Inconsistent Voltage Readings:</strong>
-- Poor contact: Clean terminals
+<p><strong>Inconsistent Voltage Readings:</strong></p>
+<div class="highlight"><pre><span></span><code>- Poor contact: Clean terminals
 - Code issue: Re-upload firmware
-- Battery dying: Replace</p>
-<p><strong>No Voltage Logged:</strong>
-- Check data file format
+- Battery dying: Replace
+</code></pre></div>
+<p><strong>No Voltage Logged:</strong></p>
+<div class="highlight"><pre><span></span><code>- Check data file format
 - Verify voltage measurement in code
-- Test ADC with multimeter</p>
-<hr />
-<h2 id="summary-checklist">Summary Checklist<a class="headerlink" href="#summary-checklist" title="Permanent link">&para;</a></h2>
-<p><strong>For Optimal Battery Performance:</strong></p>
-<ul>
-<li>[ ] Use quality, 18650 cells</li>
-<li>[ ] Start with 4.0V+ charged battery</li>
-<li>[ ] Install CR1220 backup for clock</li>
-<li>[ ] Reduce telemetry frequency if possible</li>
-<li>[ ] Monitor voltage trends</li>
-<li>[ ] Plan replacement at 3.6V</li>
-<li>[ ] Store spare batteries properly</li>
-<li>[ ] Document all battery changes</li>
-</ul>
+- Test ADC with multimeter
+</code></pre></div>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>🔧 <a href="internal-components.md">Internal Components</a> - Understanding your logger's hardware</li>
+<li>🔧 <a href="../internal-components/">Internal Components</a> - Understanding your logger's hardware</li>
 <li>🛠️ <a href="../maintenance/">Maintenance Guide</a> - Regular upkeep procedures</li>
 <li>📊 <a href="../../telemetry/thingsboard-configuration/">ThingsBoard</a> - Monitor battery voltage remotely</li>
 <li>🚨 <a href="../../troubleshooting/common-issues/">Troubleshooting</a> - Power-related issues</li>
