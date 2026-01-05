@@ -1893,24 +1893,20 @@
 <p>A flash chip can also be installed on some board varients to backup data (especially helpful for telemetered loggers), this is activated in the firmware using:</p>
 <p><code>#define FLASH</code></p>
 <p>A flow chart of this is shown below:</p>
-<pre class="mermaid"><code>flowchart LR
-    subgraph left [Manual Trigger]
-        RST[Reset Button&lt;br/&gt;Pressed]
-    end
+<pre class="mermaid"><code>flowchart TD
+    RST[Reset Button&lt;br/&gt;Pressed]
+    A[Sensor Reading]
+    B[Store in EEPROM&lt;br/&gt;Buffer]
+    C{Flush Condition&lt;br/&gt;Met?}
+    D[Flush EEPROM&lt;br/&gt;to SD Card]
+    E{FLASH Chip&lt;br/&gt;Enabled?}
+    F[Backup to&lt;br/&gt;Flash Memory]
+    G[Data Stored]
 
-    subgraph center [Main Data Flow]
-        A[Sensor Reading] --&gt; B[Store in EEPROM Buffer]
-        B --&gt; C{Flush Condition&lt;br/&gt;Met?}
-        C --&gt;|FLUSHAFTER&lt;br/&gt;reached| D[Flush EEPROM&lt;br/&gt;to SD Card]
-        C --&gt;|No| B
-        D --&gt; G[Data Stored]
-    end
-
-    subgraph right [Backup Storage]
-        E{FLASH Chip&lt;br/&gt;Enabled?}
-        F[Backup to&lt;br/&gt;Flash Memory]
-    end
-
+    A --&gt; B
+    B --&gt; C
+    C --&gt;|FLUSHAFTER&lt;br/&gt;reached| D
+    C --&gt;|No| B
     RST -.-&gt;|Triggers| D
     D --&gt; E
     E --&gt;|Yes| F
