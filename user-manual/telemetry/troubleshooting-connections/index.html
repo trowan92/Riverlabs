@@ -2920,14 +2920,14 @@
 <h2 id="quick-diagnostic-checklist">Quick Diagnostic Checklist<a class="headerlink" href="#quick-diagnostic-checklist" title="Permanent link">&para;</a></h2>
 <p><strong>Start here for fast triage:</strong></p>
 <ul>
-<li>[ ] <strong>Power:</strong> Battery &gt;3.3V?</li>
-<li>[ ] <strong>Hardware:</strong> XBee seated properly?</li>
-<li>[ ] <strong>SIM:</strong> Active and inserted correctly?</li>
-<li>[ ] <strong>Signal:</strong> RSSI better than -105 dBm?</li>
-<li>[ ] <strong>Configuration:</strong> API Mode = 2?</li>
-<li>[ ] <strong>Network:</strong> APN correct?</li>
-<li>[ ] <strong>Server:</strong> ThingsBoard device active?</li>
-<li>[ ] <strong>Code:</strong> Correct access token?</li>
+<li><strong>Power:</strong> Battery &gt;3.3V?</li>
+<li><strong>Hardware:</strong> XBee seated properly?</li>
+<li><strong>SIM:</strong> Active and inserted correctly?</li>
+<li><strong>Signal:</strong> RSSI better than -105 dBm?</li>
+<li><strong>Configuration:</strong> API Mode = 2?</li>
+<li><strong>Network:</strong> APN correct?</li>
+<li><strong>Server:</strong> ThingsBoard device active?</li>
+<li><strong>Code:</strong> Correct access token?</li>
 </ul>
 <p><strong>If all checked and still failing:</strong> Continue to detailed diagnostics below.</p>
 <hr />
@@ -3134,11 +3134,13 @@
 </ul>
 <p><strong>Solutions:</strong></p>
 <ol>
-<li><strong>Improve antenna position:</strong></li>
+<li>
+<p><strong>Improve antenna position:</strong></p>
+<ul>
 <li>Higher elevation</li>
 <li>Away from obstacles</li>
-<li>
-<p>External antenna if using internal</p>
+<li>External antenna if using internal</li>
+</ul>
 </li>
 <li>
 <p><strong>Add retry logic</strong> (code modification):
@@ -3566,17 +3568,17 @@ Size: ~30 bytes</p>
 <h2 id="preventive-maintenance">Preventive Maintenance<a class="headerlink" href="#preventive-maintenance" title="Permanent link">&para;</a></h2>
 <h3 id="regular-checks">Regular Checks<a class="headerlink" href="#regular-checks" title="Permanent link">&para;</a></h3>
 <p><strong>Weekly:</strong>
-- [ ] Check battery voltage trend
-- [ ] Verify transmission success rate &gt;90%
-- [ ] Review signal strength (should be consistent)</p>
+- Check battery voltage trend
+- Verify transmission success rate &gt;90%
+- Review signal strength (should be consistent)</p>
 <p><strong>Monthly:</strong>
-- [ ] Check SIM data usage vs. plan
-- [ ] Inspect XBee physical condition (corrosion, etc.)
-- [ ] Verify firmware up to date</p>
+- Check SIM data usage vs. plan
+- Inspect XBee physical condition (corrosion, etc.)
+- Verify firmware up to date</p>
 <p><strong>Quarterly:</strong>
-- [ ] Test logger retrieval and reconfiguration
-- [ ] Clean antenna connections
-- [ ] Review and update server endpoints if needed</p>
+- Test logger retrieval and reconfiguration
+- Clean antenna connections
+- Review and update server endpoints if needed</p>
 <h3 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">&para;</a></h3>
 <p><strong>Maximize reliability:</strong></p>
 <ol>
