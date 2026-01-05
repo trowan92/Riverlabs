@@ -1469,6 +1469,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installing-minicore-board-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing MiniCore Board Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-arduino-ide" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1821,6 +1843,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installing-minicore-board-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing MiniCore Board Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-arduino-ide" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1872,11 +1916,26 @@
 <p>If you want to familiarize yourself with Arduino, then it is worth buying one of the <a href="https://www.arduino.cc/en/Main/Products">many boards</a> from Arduino and other vendors such as Sparkfun and Adafruit.</p>
 <p>A lot of excellent manuals exist to work with Arduino, but the best place is probably the <a href="https://www.arduino.cc/en/Guide/Environment">Arduino website</a>. Here we just give a very short overview, providing the minimal knowledge to program the Riverlabs boards. But we strongly encourage you to dive deeper in Arduino if you have the time.</p>
 <p>To install the Arduino IDE, simply head to the <a href="https://www.arduino.cc/en/software">website</a> to dowload and install it for your operating system.</p>
-<p>Programming an Arduino board consists of the following steps:</p>
+<h2 id="installing-minicore-board-support">Installing MiniCore Board Support<a class="headerlink" href="#installing-minicore-board-support" title="Permanent link">&para;</a></h2>
+<p>Riverlabs loggers use the <strong>MiniCore</strong> hardware package, which provides optimized support for ATmega328 microcontrollers:</p>
+<ol>
+<li>Open the Arduino IDE</li>
+<li>Go to <strong>File → Preferences</strong></li>
+<li>In the "Additional Boards Manager URLs" field, add:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://mcudude.github.io/MiniCore/package_MCUdude_MiniCore_index.json
+</code></pre></div></li>
+<li>Click <strong>OK</strong></li>
+<li>Go to <strong>Tools → Board → Boards Manager</strong></li>
+<li>Search for <strong>MiniCore</strong></li>
+<li>Click <strong>Install</strong> on the MiniCore entry by MCUdude</li>
+<li>Close the Boards Manager</li>
+</ol>
+<p>For more information, visit the <a href="https://github.com/MCUdude/MiniCore">MiniCore GitHub repository</a>.</p>
+<h2 id="programming-steps">Programming Steps<a class="headerlink" href="#programming-steps" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Connecting the board to the computer</li>
 <li>Set the correct port</li>
-<li>Set the correct board and board options (if your board has any)</li>
+<li>Set the correct board (MiniCore → ATmega328) and board options (Clock: External 8 MHz)</li>
 <li>Compile and upload the code</li>
 </ul>
 <p>Many boards can be connected to the computer via a USB cable. The Riverlabs boards are slightly different, as they do not have a USB port, but a serial (UART) port instead. So you will need a serial-to-usb converter instead. See the section on <a href="../upload/">uploading code with Arduino</a> for more details. Once this is done, the remaining steps can be executed via the graphical interface of the Arduino IDE.</p>

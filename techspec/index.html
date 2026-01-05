@@ -929,6 +929,73 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wari-ultrasound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wari (Ultrasound)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lidar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lidar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Identification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Identification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-model-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the Model Number
+      
+    </span>
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1938,6 +2005,73 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wari-ultrasound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wari (Ultrasound)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lidar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lidar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Identification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Identification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-model-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the Model Number
+      
+    </span>
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
@@ -2075,15 +2209,182 @@
 <h2 id="wari-logger">Wari logger<a class="headerlink" href="#wari-logger" title="Permanent link">&para;</a></h2>
 <h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
 <p>The Wari logger is based around the Maxbotix MB7389 Ultrasound distance sensor. Due to the short range of ultrasound sensors (5&nbsp;m in the case of the MB7389) ultrasound loggers are mostly suitable for water level sensing in small rivers and reservoirs. The Wari does not have telemetry functionality, and is therefore only suited for offline data collection with local storage onto an SD card. It is engineered for ultra low power consumption, with a battery life of over 5 years under typical use.</p>
+<h2 id="detailed-specifications">Detailed Specifications<a class="headerlink" href="#detailed-specifications" title="Permanent link">&para;</a></h2>
+<h3 id="wari-ultrasound">Wari (Ultrasound)<a class="headerlink" href="#wari-ultrasound" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensor Type</strong></td>
+<td>Ultrasonic</td>
+<td>Maxbotix MB7389 HRXL</td>
+</tr>
+<tr>
+<td><strong>Measurement Range</strong></td>
+<td>0.3m - 5m</td>
+<td>Practical range ~4.5m</td>
+</tr>
+<tr>
+<td><strong>Resolution</strong></td>
+<td>1mm</td>
+<td>Under ideal conditions</td>
+</tr>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>±1%</td>
+<td>Temperature dependent</td>
+</tr>
+<tr>
+<td><strong>Beam Width</strong></td>
+<td>~15° cone</td>
+<td>Requires obstacle clearance</td>
+</tr>
+<tr>
+<td><strong>Mounting Angle</strong></td>
+<td>Vertical preferred</td>
+<td>Angled mounting reduces accuracy</td>
+</tr>
+<tr>
+<td><strong>Target Surface</strong></td>
+<td>Water, solid objects</td>
+<td>Good water surface reflectivity</td>
+</tr>
+<tr>
+<td><strong>Temperature Range</strong></td>
+<td>-40°C to +65°C</td>
+<td>Sensor operating range</td>
+</tr>
+<tr>
+<td><strong>Power Consumption</strong></td>
+<td>~50mA active</td>
+<td>Low power between readings</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td>Atmel Atmega328</td>
+<td>Arduino Pro Mini compatible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lidar">Lidar<a class="headerlink" href="#lidar" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensor Type</strong></td>
+<td>Laser rangefinder</td>
+<td>Garmin Lidarlite v3HP</td>
+</tr>
+<tr>
+<td><strong>Measurement Range</strong></td>
+<td>0.05m - 35m</td>
+<td>Depends on target reflectivity</td>
+</tr>
+<tr>
+<td><strong>Resolution</strong></td>
+<td>1cm</td>
+<td>Consistent across range</td>
+</tr>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>±2.5cm</td>
+<td>Up to 40m</td>
+</tr>
+<tr>
+<td><strong>Beam Divergence</strong></td>
+<td>8 milliradians</td>
+<td>Very narrow, &lt;1° effective</td>
+</tr>
+<tr>
+<td><strong>Mounting Angle</strong></td>
+<td>Up to 40°</td>
+<td>Minimal accuracy loss</td>
+</tr>
+<tr>
+<td><strong>Target Surface</strong></td>
+<td>Most surfaces</td>
+<td>Best with rough/turbid water</td>
+</tr>
+<tr>
+<td><strong>Temperature Range</strong></td>
+<td>-20°C to +60°C</td>
+<td>Sensor operating range</td>
+</tr>
+<tr>
+<td><strong>Power Consumption</strong></td>
+<td>~100mA active</td>
+<td>Higher but infrequent</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td>Atmel Atmega328</td>
+<td>Arduino Pro Mini compatible</td>
+</tr>
+</tbody>
+</table>
+<h2 id="physical-identification">Physical Identification<a class="headerlink" href="#physical-identification" title="Permanent link">&para;</a></h2>
+<h3 id="finding-the-model-number">Finding the Model Number<a class="headerlink" href="#finding-the-model-number" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Model Number Location</p>
+<p>The model designation is typically found on a label on the <strong>back of the enclosure</strong> or <strong>inside the battery compartment</strong>.</p>
+</div>
+<p><strong>Look for:</strong></p>
+<ul>
+<li><strong>"Wari v1"</strong>, <strong>"Wari v2"</strong>, <strong>"Wari v2.1"</strong> - Ultrasound models</li>
+<li><strong>"WMOnode"</strong>, <strong>"Lidar"</strong> - Lidar models</li>
+</ul>
 <p>The Wari has the following characteristics:</p>
 <h3 id="technical-specifications">Technical specifications<a class="headerlink" href="#technical-specifications" title="Permanent link">&para;</a></h3>
-<p>| Range                      | 300 mm - 5000 mm |
-| Resolution (water level)   | 1 mm             |
-| Resolution (temperature)   | 0.25°C           |
-| Resolution (voltage)       | 0.01 V           |
-| Accuracy (water level)     | ~ 5 mm           |
-| Power supply               | 1 x 3.6 V Li-ion battery (18650) |
-| Water resistance           | IP67             |</p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Range</strong></td>
+<td>300 mm - 5000 mm</td>
+</tr>
+<tr>
+<td><strong>Resolution (water level)</strong></td>
+<td>1 mm</td>
+</tr>
+<tr>
+<td><strong>Resolution (temperature)</strong></td>
+<td>0.25°C</td>
+</tr>
+<tr>
+<td><strong>Resolution (voltage)</strong></td>
+<td>0.01 V</td>
+</tr>
+<tr>
+<td><strong>Accuracy (water level)</strong></td>
+<td>~ 5 mm</td>
+</tr>
+<tr>
+<td><strong>Power supply</strong></td>
+<td>1 x 3.6 V Li-ion battery (18650)</td>
+</tr>
+<tr>
+<td><strong>Water resistance</strong></td>
+<td>IP67</td>
+</tr>
+</tbody>
+</table>
 <h3 id="pcb-layout">PCB layout<a class="headerlink" href="#pcb-layout" title="Permanent link">&para;</a></h3>
 <p><img alt="PCB layout of the Wari" src="../images/wari_layout.jpg" title="Wari PCB layout" /></p>
 <h3 id="power-considerations">Power considerations<a class="headerlink" href="#power-considerations" title="Permanent link">&para;</a></h3>
@@ -2091,13 +2392,44 @@
 <h3 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h3>
 <p>The WMOnode was developed as part of the WMO funded Innovation Hub project. It is based around a Lidarlite v3HP lidar distance sensor with a range of up to 35 m, and has a slot for a telemetry module (XBee form factor). We typically combine it with a DIGI 3G Cellular modem for telemetry.</p>
 <h3 id="technical-specifications_1">Technical specifications<a class="headerlink" href="#technical-specifications_1" title="Permanent link">&para;</a></h3>
-<p>| Range                      | 0.05 m - 35 m     |
-| Resolution (water level)   | 1 cm             |
-| Resolution (temperature)   | 0.25°C           |
-| Resolution (voltage)       | 0.01 V           |
-| Accuracy (water level)     | ~ 5 - 10 cm      |
-| Power supply               | 1 x 3.6 V Li-ion battery (18650) |
-| Water resistance           | IP67             |</p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Range</strong></td>
+<td>0.05 m - 35 m</td>
+</tr>
+<tr>
+<td><strong>Resolution (water level)</strong></td>
+<td>1 cm</td>
+</tr>
+<tr>
+<td><strong>Resolution (temperature)</strong></td>
+<td>0.25°C</td>
+</tr>
+<tr>
+<td><strong>Resolution (voltage)</strong></td>
+<td>0.01 V</td>
+</tr>
+<tr>
+<td><strong>Accuracy (water level)</strong></td>
+<td>~ 5 - 10 cm</td>
+</tr>
+<tr>
+<td><strong>Power supply</strong></td>
+<td>1 x 3.6 V Li-ion battery (18650)</td>
+</tr>
+<tr>
+<td><strong>Water resistance</strong></td>
+<td>IP67</td>
+</tr>
+</tbody>
+</table>
 <h3 id="pcb-layout_1">PCB layout<a class="headerlink" href="#pcb-layout_1" title="Permanent link">&para;</a></h3>
 <h3 id="power-considerations_1">Power considerations<a class="headerlink" href="#power-considerations_1" title="Permanent link">&para;</a></h3>
 

@@ -684,15 +684,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configure-arduino-ide-for-riverlabs-loggers" class="md-nav__link">
+  <a href="#step-4-install-minicore-board-support" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Configure Arduino IDE for Riverlabs Loggers
+        Step 4: Install MiniCore Board Support
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 4: Configure Arduino IDE for Riverlabs Loggers">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-configure-arduino-ide-for-riverlabs-loggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Configure Arduino IDE for Riverlabs Loggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Configure Arduino IDE for Riverlabs Loggers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2089,15 +2100,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configure-arduino-ide-for-riverlabs-loggers" class="md-nav__link">
+  <a href="#step-4-install-minicore-board-support" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Configure Arduino IDE for Riverlabs Loggers
+        Step 4: Install MiniCore Board Support
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 4: Configure Arduino IDE for Riverlabs Loggers">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-configure-arduino-ide-for-riverlabs-loggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Configure Arduino IDE for Riverlabs Loggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Configure Arduino IDE for Riverlabs Loggers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2299,17 +2321,41 @@
 <li>Restart your computer after installation</li>
 <li>Connect your FTDI cable and verify it appears as a serial port in Arduino IDE (<strong>Tools → Port</strong>)</li>
 </ol>
-<h2 id="step-4-configure-arduino-ide-for-riverlabs-loggers">Step 4: Configure Arduino IDE for Riverlabs Loggers<a class="headerlink" href="#step-4-configure-arduino-ide-for-riverlabs-loggers" title="Permanent link">&para;</a></h2>
+<h2 id="step-4-install-minicore-board-support">Step 4: Install MiniCore Board Support<a class="headerlink" href="#step-4-install-minicore-board-support" title="Permanent link">&para;</a></h2>
+<p>Riverlabs loggers use the MiniCore hardware package, which provides better support for ATmega328 microcontrollers:</p>
+<ol>
+<li>Open the Arduino IDE</li>
+<li>Go to <strong>File → Preferences</strong></li>
+<li>In the "Additional Boards Manager URLs" field, add:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://mcudude.github.io/MiniCore/package_MCUdude_MiniCore_index.json
+</code></pre></div></li>
+<li>Click <strong>OK</strong></li>
+<li>Go to <strong>Tools → Board → Boards Manager</strong></li>
+<li>Search for <strong>MiniCore</strong></li>
+<li>Click <strong>Install</strong> on the MiniCore entry by MCUdude</li>
+<li>Close the Boards Manager</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">MiniCore</p>
+<p>MiniCore is a community-maintained Arduino hardware package specifically designed for ATmega328 and similar microcontrollers. Learn more at the <a href="https://github.com/MCUdude/MiniCore">MiniCore GitHub repository</a>.</p>
+</div>
+<h2 id="step-5-configure-arduino-ide-for-riverlabs-loggers">Step 5: Configure Arduino IDE for Riverlabs Loggers<a class="headerlink" href="#step-5-configure-arduino-ide-for-riverlabs-loggers" title="Permanent link">&para;</a></h2>
 <p>Before uploading code, you must configure the Arduino IDE with the correct board settings:</p>
 <h3 id="board-settings">Board Settings<a class="headerlink" href="#board-settings" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Open the Arduino IDE</li>
-<li>Go to <strong>Tools → Board</strong> and select <strong>Arduino Pro or Pro Mini</strong></li>
-<li>Go to <strong>Tools → Processor</strong> and select <strong>ATmega328P (3.3V, 8MHz)</strong></li>
+<li>Go to <strong>Tools → Board → MiniCore</strong> and select <strong>ATmega328</strong></li>
+<li>Configure the following settings in the <strong>Tools</strong> menu:</li>
+<li><strong>Clock:</strong> External 8 MHz</li>
+<li><strong>BOD:</strong> BOD 2.7V</li>
+<li><strong>EEPROM:</strong> EEPROM retained</li>
+<li><strong>Compiler LTO:</strong> LTO Disabled</li>
+<li><strong>Variant:</strong> 328P / 328PA</li>
+<li><strong>Bootloader:</strong> Yes (UART0)</li>
 </ol>
 <div class="admonition warning">
-<p class="admonition-title">Critical Setting</p>
-<p>The processor MUST be set to <strong>ATmega328P (3.3V, 8MHz)</strong>. Using the wrong setting (like 5V, 16MHz) will cause upload failures or runtime issues.</p>
+<p class="admonition-title">Critical Settings</p>
+<p>The board MUST be set to <strong>MiniCore → ATmega328</strong> with <strong>Clock: External 8 MHz</strong>. Using the wrong settings will cause upload failures or runtime issues.</p>
 </div>
 <h3 id="select-the-port">Select the Port<a class="headerlink" href="#select-the-port" title="Permanent link">&para;</a></h3>
 <p>Once you've connected your FTDI cable to your computer:</p>
@@ -2343,10 +2389,10 @@
 <p>The <strong>Tools</strong> menu is where you configure critical settings for your logger:</p>
 <p><img alt="Arduino Board Settings" src="../../../images/arduino2.jpg" />
 <em>Board and processor settings in the Tools menu</em></p>
-<p>As mentioned in Step 4, you must select:</p>
+<p>As mentioned in Step 5, you must select:</p>
 <ul>
-<li><strong>Board:</strong> Arduino Pro or Pro Mini</li>
-<li><strong>Processor:</strong> ATmega328P (3.3V, 8MHz)</li>
+<li><strong>Board:</strong> MiniCore → ATmega328</li>
+<li><strong>Clock:</strong> External 8 MHz</li>
 <li><strong>Port:</strong> Your FTDI cable's serial port</li>
 </ul>
 <div class="admonition example">

@@ -2106,29 +2106,43 @@
 <h2 id="quick-setup-steps">Quick Setup Steps<a class="headerlink" href="#quick-setup-steps" title="Permanent link">&para;</a></h2>
 <h3 id="1-identify-your-logger">1. Identify Your Logger<a class="headerlink" href="#1-identify-your-logger" title="Permanent link">&para;</a></h3>
 <p>First, identify which logger model you have. See the <a href="logger-identification.md">Logger Identification Guide</a> for detailed comparisons.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Wari Ultrasound</label><label for="__tabbed_1_2">Wari Lidar</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="Wari logger" src="../../../images/Wari_v1.jpg" width="300" /></p>
-<p><strong>Key Features:</strong></p>
+<div class="grid cards">
 <ul>
-<li>Maxbotix MB7389 ultrasound sensor</li>
-<li>0.3m - 5m range</li>
-<li>Best for water level monitoring</li>
-<li>Wide beam angle (requires clearance)</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<p><img alt="Lidar logger" src="../../../images/WMOnode.jpg" width="300" /></p>
-<p><strong>Key Features:</strong></p>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 3.77-.75.84S9.97 6.06 8.68 7.94 6 12.07 6 14.23a6 6 0 0 0 6 6 6 6 0 0 0 6-6c0-2.16-1.39-4.41-2.68-6.29s-2.57-3.33-2.57-3.33zm0 3.13c.44.52.84.95 1.68 2.17 1.21 1.76 2.32 4 2.32 5.16 0 2.22-1.78 4-4 4s-4-1.78-4-4c0-1.16 1.11-3.4 2.32-5.16.84-1.22 1.24-1.65 1.68-2.17"/></svg></span> <strong>Wari Logger</strong></p>
+<hr />
+<p><strong>Ultrasound Distance Sensor</strong></p>
+<p><img alt="Wari logger" src="../../../images/Wari_v1.jpg" width="250" /></p>
+<p><strong>Sensor:</strong> Maxbotix MB7389<br />
+<strong>Range:</strong> 0.3m - 5m<br />
+<strong>Resolution:</strong> 1mm<br />
+<strong>Beam Angle:</strong> Wide (~15°)  </p>
+<p><strong>Best For:</strong></p>
 <ul>
-<li>Garmin Lidarlite v3HP sensor</li>
-<li>0.05m - 35m range</li>
-<li>Can measure at angles up to 40°</li>
-<li>Narrow beam (precise measurements)</li>
+<li>Water level monitoring</li>
+<li>Budget-conscious projects</li>
+<li>Shorter range applications</li>
+<li>Vertical mounting positions</li>
 </ul>
-</div>
-</div>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m9 13-4 3c-1 .88-1.14 2.12-1 3 .13 1 .91 2.22 2 2.68 1.57.67 3.09.22 4.04-.76L19 13c1.86-1.38 1-4-1-4h-6l7.46-4.39c.44-.32.62-.79.6-1.24C20 2.67 19.46 2 18.6 2h-.06c-.35 0-.68.11-.98.29L5 9c-.81.46-1.06 1.24-1 2 .05 1.03.74 2 2 2m-1 5.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1-5 0"/></svg></span> <strong>Lidar Logger</strong></p>
+<hr />
+<p><strong>Laser Distance Sensor</strong></p>
+<p><img alt="Lidar logger" src="../../../images/WMOnode.jpg" width="250" /></p>
+<p><strong>Sensor:</strong> Garmin Lidarlite v3HP<br />
+<strong>Range:</strong> 0.05m - 35m<br />
+<strong>Resolution:</strong> 1cm<br />
+<strong>Beam Angle:</strong> Very narrow (~0.5°)  </p>
+<p><strong>Best For:</strong></p>
+<ul>
+<li>Long-range measurements</li>
+<li>Angled installations (up to 40°)</li>
+<li>High-precision applications</li>
+<li>Difficult mounting situations</li>
+</ul>
+</li>
+</ul>
 </div>
 <h3 id="2-insert-batteries">2. Insert Batteries<a class="headerlink" href="#2-insert-batteries" title="Permanent link">&para;</a></h3>
 <div class="admonition danger">
@@ -2139,7 +2153,10 @@
 <li>Switch off the board</li>
 </ol>
 <p><strong>RTC Battery (CR1220):</strong></p>
-<p>!!! tip "Coin cell may already be installed, only replace if needed to preserve programmed date install the main battery first and switch on.</p>
+<div class="admonition tip">
+<p class="admonition-title">Date Preservation</p>
+<p>Coin cell may already be installed, only replace if needed to preserve programmed date install the main battery first and switch on.</p>
+</div>
 <ol>
 <li>Locate the small coin battery slot on the PCB (sometimes on the revere)</li>
 <li>Insert the CR1220 battery (+ side up, typically)</li>
@@ -2171,7 +2188,7 @@
 <p><strong>Before Programming:</strong></p>
 <div class="admonition danger">
 <p class="admonition-title">Disconnect Sensor First - CRITICAL</p>
-<p><strong>For Wari Ultrasonic models:</strong> Disconnect the Maxbotix sensor (white connector) from the logger before programming. The sensor and FTDI cable use the same serial port, causing interference that prevents successful code upload. Reconnect the sensor after programming is complete.</p>
+<p><strong>For Wari Ultrasonic models:</strong> Disconnect the Maxbotix sensor (three pin connector) from the logger before programming. The sensor and FTDI cable use the same serial port, causing interference that prevents successful code upload. Reconnect the sensor after programming is complete.</p>
 </div>
 <p><strong>Clock Setting Steps:</strong></p>
 <ol>
@@ -2181,8 +2198,8 @@
 <li>Align black wire with "BLK" marking</li>
 <li>Set power switch to OFF position (powered by FTDI)</li>
 <li>Open Arduino IDE</li>
-<li>Set board to <strong>Arduino Pro or Pro Mini</strong></li>
-<li>Set processor to <strong>ATmega328P (3.3V, 8MHz External)</strong></li>
+<li>Set board to <strong>MiniCore → ATmega328</strong></li>
+<li>Set clock to <strong>External 8 MHz</strong></li>
 <li>Load the <code>set_clock.ino</code> sketch (in repository root)</li>
 <li>Upload to the logger</li>
 <li>Open Serial Monitor (baud rate: 57600) to verify time</li>
@@ -2222,7 +2239,7 @@
 <h3 id="6-test-before-deployment">6. Test Before Deployment<a class="headerlink" href="#6-test-before-deployment" title="Permanent link">&para;</a></h3>
 <p>Before taking your logger to the field, perform a bench test:</p>
 <ul>
-<li><strong>Sensor reconnected</strong> (white connector plugged in)</li>
+<li><strong>Sensor reconnected</strong> (matbotix 3-pin connector plugged in)</li>
 <li>Power switch in ON position</li>
 <li>Verify LED flashes during measurements</li>
 <li>Check that data is being written to SD card</li>

@@ -2332,12 +2332,22 @@
 <h3 id="set-the-correct-board-in-the-arduino-ide">Set the Correct Board in the Arduino IDE<a class="headerlink" href="#set-the-correct-board-in-the-arduino-ide" title="Permanent link">&para;</a></h3>
 <p><strong>Board Settings</strong> (under the <strong>Tools</strong> menu):</p>
 <ol>
-<li><strong>Board:</strong> Arduino Pro or Pro Mini</li>
-<li><strong>Processor:</strong> ATmega328P (3.3V, 8MHz)</li>
+<li><strong>Board:</strong> MiniCore → ATmega328</li>
+<li><strong>Clock:</strong> External 8 MHz</li>
+<li><strong>BOD:</strong> BOD 2.7V</li>
+<li><strong>Variant:</strong> 328P / 328PA</li>
+<li><strong>Bootloader:</strong> Yes (UART0)</li>
 </ol>
 <div class="admonition warning">
-<p class="admonition-title">Processor Setting is Critical</p>
-<p>The processor MUST be set to <strong>ATmega328P (3.3V, 8MHz)</strong>. Using the wrong voltage/speed setting (like 5V, 16MHz) can cause upload failures or runtime issues.</p>
+<p class="admonition-title">Board Settings are Critical</p>
+<p>The board MUST be set to <strong>MiniCore → ATmega328</strong> with <strong>Clock: External 8 MHz</strong>. Using the wrong settings can cause upload failures or runtime issues.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">MiniCore Installation</p>
+<p>If you don't see MiniCore in your boards list, you need to install it via the Boards Manager. Add this URL in File → Preferences → Additional Boards Manager URLs:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://mcudude.github.io/MiniCore/package_MCUdude_MiniCore_index.json
+</code></pre></div>
+Then install MiniCore from Tools → Board → Boards Manager.</p>
 </div>
 <p><strong>Select the Port:</strong></p>
 <ol>
@@ -2365,10 +2375,10 @@
 <p class="admonition-title">Compensate for Upload Delay</p>
 <p>There is approximately a <strong>10-second delay</strong> between when code is compiled and when the microcontroller runs it. This means the clock will be 10 seconds slow.</p>
 <p><strong>To compensate</strong>, modify the DS3231_Simple script:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">RtcDateTime</span><span class="w"> </span><span class="n">compiled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RtcDateTime</span><span class="p">(</span><span class="n">__DATE__</span><span class="p">,</span><span class="w"> </span><span class="n">__TIME__</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">RtcDateTime</span><span class="w"> </span><span class="n">compiled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RtcDateTime</span><span class="p">(</span><span class="n">__DATE__</span><span class="p">,</span><span class="w"> </span><span class="n">__TIME__</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </code></pre></div>
 <p><strong>For different time zones</strong>, use this formula:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">RtcDateTime</span><span class="w"> </span><span class="n">compiled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RtcDateTime</span><span class="p">(</span><span class="n">__DATE__</span><span class="p">,</span><span class="w"> </span><span class="n">__TIME__</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">TZ</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">RtcDateTime</span><span class="w"> </span><span class="n">compiled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RtcDateTime</span><span class="p">(</span><span class="n">__DATE__</span><span class="p">,</span><span class="w"> </span><span class="n">__TIME__</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">TZ</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </code></pre></div>
 <p>Replace <code>TZ</code> with your time offset in hours (e.g., <code>-5</code> for EST, <code>+1</code> for CET).</p>
 </div>
@@ -2459,9 +2469,9 @@
 <h3 id="error-this-lowpower-library-only-works-on-avr-processors">Error: "This LowPower library only works on AVR processors"<a class="headerlink" href="#error-this-lowpower-library-only-works-on-avr-processors" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> Wrong board type selected in Arduino IDE.</p>
 <p><strong>Solution:</strong>
-- Go to <strong>Tools → Board</strong>
-- Select <strong>Arduino Pro or Pro Mini</strong>
-- Verify <strong>Processor</strong> is set to <strong>ATmega328P (3.3V, 8MHz)</strong></p>
+- Go to <strong>Tools → Board → MiniCore</strong>
+- Select <strong>ATmega328</strong>
+- Verify <strong>Clock</strong> is set to <strong>External 8 MHz</strong></p>
 <hr />
 <h3 id="error-programmer-is-not-responding-or-avrdude-stk500_getsync">Error: "programmer is not responding" or "avrdude: stk500_getsync()"<a class="headerlink" href="#error-programmer-is-not-responding-or-avrdude-stk500_getsync" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> Communication issue between computer and logger.</p>

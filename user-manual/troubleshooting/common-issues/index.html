@@ -2695,8 +2695,8 @@ Date,Time,Distance_mm,Temp_C,Battery_V
 <p><strong>🔍 Likely Causes:</strong>
 1. <strong>Sensor connected during upload</strong> (CRITICAL - most common for Wari Ultrasonic)
 2. <strong>FTDI cable wrong orientation</strong> (green/black reversed)
-3. <strong>Wrong board settings</strong> (not Arduino Pro Mini)
-4. <strong>Wrong processor settings</strong> (5V/16MHz instead of 3.3V/8MHz)
+3. <strong>Wrong board settings</strong> (not MiniCore ATmega328)
+4. <strong>Wrong clock settings</strong> (not External 8 MHz)
 5. <strong>FTDI cable not seated</strong> properly
 6. <strong>Power issue</strong> (insufficient power or no power)</p>
 <p><strong>✅ Solution:</strong></p>
@@ -2723,10 +2723,10 @@ Date,Time,Distance_mm,Temp_C,Battery_V
 <a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>- Reconnect firmly
 </code></pre></div></p>
 <p><strong>Step 3: Verify Arduino IDE settings</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Tools → Board: &quot;Arduino Pro or Pro Mini&quot;
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Tools → Processor: &quot;ATmega328P (3.3V, 8MHz)&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Tools → Board → MiniCore: &quot;ATmega328&quot;
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Tools → Clock: &quot;External 8 MHz&quot;
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>NOT: &quot;ATmega328P (5V, 16MHz)&quot;  ← Wrong!
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>NOT: &quot;Arduino Pro or Pro Mini&quot;  ← Old/Wrong!
 </code></pre></div></p>
 <p><strong>Step 4: Check power</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>- Power switch to OFF (powered by FTDI)
@@ -2810,8 +2810,8 @@ Date,Time,Distance_mm,Temp_C,Battery_V
 <p><strong>✅ Solution:</strong></p>
 <p><strong>Step 1: Verify board selection</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Arduino IDE:
-<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>- Tools → Board → Should be: &quot;Arduino Pro or Pro Mini&quot;
-<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>- Tools → Processor → Should be: &quot;ATmega328P (3.3V, 8MHz)&quot;
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>- Tools → Board → MiniCore: Should be &quot;ATmega328&quot;
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>- Tools → Clock: Should be &quot;External 8 MHz&quot;
 <a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>- If wrong: Select correct, re-upload
 </code></pre></div></p>
 <p><strong>Step 2: Test basic blink</strong>
@@ -2944,8 +2944,8 @@ Date,Time,Distance_mm,Temp_C,Battery_V
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>Error: &quot;This LowPower library only works on AVR processors&quot;
 <a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
 <a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>Solution:
-<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>- Board must be: Arduino Pro or Pro Mini
-<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>- Processor must be: ATmega328P (3.3V, 8MHz)
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>- Board must be: MiniCore → ATmega328
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>- Clock must be: External 8 MHz
 <a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>- NOT: Arduino Uno, Mega, or other non-AVR boards
 </code></pre></div></p>
 <p><strong>Required Libraries for Riverlabs Loggers:</strong></p>
