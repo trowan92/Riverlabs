@@ -5,43 +5,23 @@
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
-         <loc>https://trowan92.github.io/Riverlabs/SDcard/</loc>
+         <loc>https://trowan92.github.io/Riverlabs/developer-manual/programming/arduino-setup/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
-         <loc>https://trowan92.github.io/Riverlabs/arduino/</loc>
+         <loc>https://trowan92.github.io/Riverlabs/developer-manual/programming/uploading-code/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
-         <loc>https://trowan92.github.io/Riverlabs/data-handling/</loc>
+         <loc>https://trowan92.github.io/Riverlabs/developer-manual/technical-reference/installation-details/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
-         <loc>https://trowan92.github.io/Riverlabs/installation/</loc>
+         <loc>https://trowan92.github.io/Riverlabs/developer-manual/technical-reference/thingsboard-integration/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
-         <loc>https://trowan92.github.io/Riverlabs/start/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://trowan92.github.io/Riverlabs/techspec/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://trowan92.github.io/Riverlabs/thingsboard/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://trowan92.github.io/Riverlabs/upload/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://trowan92.github.io/Riverlabs/xbee3G/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://trowan92.github.io/Riverlabs/developer-manual/hardware/internal-components/</loc>
+         <loc>https://trowan92.github.io/Riverlabs/developer-manual/technical-reference/xbee-3g-setup/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
@@ -85,11 +65,19 @@
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
+         <loc>https://trowan92.github.io/Riverlabs/user-manual/hardware/data-handling/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
          <loc>https://trowan92.github.io/Riverlabs/user-manual/hardware/internal-components/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
          <loc>https://trowan92.github.io/Riverlabs/user-manual/hardware/maintenance/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://trowan92.github.io/Riverlabs/user-manual/hardware/technical-specifications/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
