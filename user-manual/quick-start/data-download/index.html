@@ -745,56 +745,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-processing-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Processing Tips
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Processing Tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#converting-raw-distance-to-water-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Converting Raw Distance to Water Level
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-battery-health" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring Battery Health
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-data-quality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checking Data Quality
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2005,56 +1955,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-processing-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Processing Tips
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Processing Tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#converting-raw-distance-to-water-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Converting Raw Distance to Water Level
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-battery-health" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring Battery Health
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-data-quality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checking Data Quality
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2137,7 +2037,7 @@
 <ol>
 <li>Press the <strong>RESET</strong> button on the logger to flush any buffered data</li>
 <li>Wait for the LED to show a red pulse (indicating data transfer)</li>
-<li>Once the LED turns off, the data has been saved</li>
+<li>Once the LED turns off, the data has been flushed to the microSD card.</li>
 <li>Gently push and release the SD card to eject it from the slot</li>
 <li>Remove the SD card carefully</li>
 </ol>
@@ -2232,32 +2132,6 @@
 <li>Push gently until it clicks into place</li>
 <li>Press the <strong>RESET</strong> button to reinitialize the logger</li>
 </ol>
-<h2 id="data-processing-tips">Data Processing Tips<a class="headerlink" href="#data-processing-tips" title="Permanent link">&para;</a></h2>
-<h3 id="converting-raw-distance-to-water-level">Converting Raw Distance to Water Level<a class="headerlink" href="#converting-raw-distance-to-water-level" title="Permanent link">&para;</a></h3>
-<p>The raw distance measurements are from the sensor to the water surface. To convert to water level:</p>
-<ol>
-<li>Calculate the average of the 10 readings (columns 2-11)</li>
-<li>Subtract from the sensor height above datum</li>
-<li>Apply any calibration offsets</li>
-</ol>
-<p><strong>Example:</strong>
-- Sensor height above datum: 5000 mm
-- Average distance reading: 2214 mm
-- Water level = 5000 - 2214 = 2786 mm above datum</p>
-<h3 id="monitoring-battery-health">Monitoring Battery Health<a class="headerlink" href="#monitoring-battery-health" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Full battery:</strong> ~4200 mV</li>
-<li><strong>Good condition:</strong> 3900-4200 mV</li>
-<li><strong>Monitor closely:</strong> 3700-3900 mV</li>
-<li><strong>Replace soon:</strong> &lt;3700 mV</li>
-<li><strong>Logger shutdown:</strong> ~3500 mV</li>
-</ul>
-<h3 id="checking-data-quality">Checking Data Quality<a class="headerlink" href="#checking-data-quality" title="Permanent link">&para;</a></h3>
-<p>Look for:
-- ✅ Consistent readings across the 10 measurements
-- ✅ Gradual changes in water level over time
-- ❌ Sudden jumps or erratic readings (may indicate sensor issues)
-- ❌ Repeated identical readings (potential sensor fault)</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p><strong>SD card not recognized:</strong>
 - Try a different card reader

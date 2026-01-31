@@ -1692,28 +1692,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-reference-card" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Reference Card
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2723,28 +2701,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-reference-card" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Reference Card
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2812,12 +2768,12 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Before starting, ensure you have:</p>
 <ul>
-<li>[ ] <strong>XBee Cellular module</strong> (3G, LTE-M, or NB-IoT)</li>
-<li>[ ] <strong>Active SIM card</strong> (inserted in XBee)</li>
-<li>[ ] <strong>USB adapter</strong> for XBee (XBee Grove Board or similar)</li>
-<li>[ ] <strong>Computer</strong> (Windows, macOS, or Linux)</li>
-<li>[ ] <strong>XBee Studio</strong> or <strong>XCTU</strong> installed</li>
-<li>[ ] <strong>Carrier APN details</strong> (from SIM provider)</li>
+<li><strong>XBee Cellular module</strong> (3G, LTE-M, or NB-IoT)</li>
+<li><strong>Active SIM card</strong> (inserted in XBee)</li>
+<li><strong>USB adapter</strong> for XBee (XBee Grove Board or similar)</li>
+<li><strong>Computer</strong> (Windows, macOS, or Linux)</li>
+<li><strong>XBee Studio</strong> or <strong>XCTU</strong> installed</li>
+<li><strong>Carrier APN details</strong> (from SIM provider)</li>
 </ul>
 <hr />
 <h2 id="part-1-installing-xbee-studio">Part 1: Installing XBee Studio<a class="headerlink" href="#part-1-installing-xbee-studio" title="Permanent link">&para;</a></h2>
@@ -3575,55 +3531,12 @@
 <li>Check firmware version (Radio Configuration tab)</li>
 <li>Reconfigure settings (firmware update may reset)</li>
 </ol>
-<hr />
-<h2 id="quick-reference-card">Quick Reference Card<a class="headerlink" href="#quick-reference-card" title="Permanent link">&para;</a></h2>
-<p><strong>Print and laminate for field use:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>┌───────────────────────────────────────────┐
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>│   XBEE3 CELLULAR - QUICK CONFIG          │
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├───────────────────────────────────────────┤
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>│ SERIAL INTERFACING:                       │
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>│  BD = 9600 (baud rate)                    │
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>│  NB = 0 (no parity)                       │
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>│  SB = 1 (1 stop bit)                      │
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>│                                           │
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>│ NETWORKING:                               │
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>│  AN = [carrier APN]                       │
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>│  AU = (blank usually)                     │
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>│  AV = (blank usually)                     │
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>│  NT = 0 (LTE-M)                           │
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>│                                           │
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>│ API MODE:                                 │
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>│  AP = 2 (API with escapes) **CRITICAL**  │
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>│  AO = 0 (standard)                        │
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>│                                           │
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>│ SLEEP:                                    │
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>│  SM = 1 (pin sleep)                       │
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>│  SO = 0 (standard)                        │
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>│                                           │
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>│ SAVE: Click &quot;Write&quot; button!              │
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>└───────────────────────────────────────────┘
-</code></pre></div>
-<hr />
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<p><strong>Do:</strong>
-- ✅ Save configuration profile for reuse
-- ✅ Label configured modules
-- ✅ Test network connection before field deployment
-- ✅ Document settings (APN, etc.) for each logger
-- ✅ Keep XBee Studio updated</p>
-<p><strong>Don't:</strong>
-- ❌ Disconnect USB during firmware update
-- ❌ Skip clicking "Write" button
-- ❌ Assume settings saved without verification
-- ❌ Bend pins during installation/removal
-- ❌ Insert/remove SIM when powered</p>
-<hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>📊 <a href="../thingsboard-configuration/">ThingsBoard Configuration</a> - Set up your dashboard</li>
-<li>🚨 <a href="../troubleshooting-connections/">Troubleshooting Connections</a> - Fix telemetry issues</li>
-<li>📡 <a href="../setup-guide/">Telemetry Setup Guide</a> - Complete setup overview</li>
-<li>🔋 <a href="../../hardware/battery-power-guide/">Battery &amp; Power Guide</a> - Optimize for telemetry</li>
+<li><a href="../thingsboard-configuration/">ThingsBoard Configuration</a> - Set up your dashboard</li>
+<li><a href="../troubleshooting-connections/">Troubleshooting Connections</a> - Fix telemetry issues</li>
+<li><a href="../setup-guide/">Telemetry Setup Guide</a> - Complete setup overview</li>
+<li><a href="../../hardware/battery-power-guide/">Battery &amp; Power Guide</a> - Optimize for telemetry</li>
 </ul>
 <hr />
 <div class="admonition success">
